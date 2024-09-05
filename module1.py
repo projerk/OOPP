@@ -1,2 +1,2 @@
 def fuck():
-    print("h")
+    print("minh")
