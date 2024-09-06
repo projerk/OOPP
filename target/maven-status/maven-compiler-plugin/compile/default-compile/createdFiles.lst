@@ -1,3 +1,7 @@
+controller\LoginController.class
 app\Projerk.class
+model\Word.class
+model\Authorization.class
+model\APIService.class
 model\Person.class
 controller\MainController.class

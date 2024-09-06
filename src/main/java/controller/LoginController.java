@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import model.Authorization;
+import model.APIService;
 
 public class LoginController {
     @FXML
@@ -17,8 +18,19 @@ public class LoginController {
     private void handleSubmit() {
         String username =usernameField.getText();
         String password = passwordField.getText();
+        APIService apiService = new APIService();
+        Authorization authorization = new Authorization(username, password);
 
-        Authorization author = new Authorization(username, password);
-        resultLabel.setText("Welcome back, " + author.getUsername() + "!");
+        String response = "";
+
+        if (authorization.isPasswordValid() && authorization.isUsernameValid()) {
+            try {
+                response = apiService.APISignin(username, password);
+            } catch (Exception e) {
+                e.printStackTrace();
+            } 
+        }
+
+        resultLabel.setText(response);
     }
 }
