@@ -1,2 +1,0 @@
-def fuck():
-    print("minh")
