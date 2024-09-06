@@ -12,8 +12,7 @@ public class Projerk extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            // Thay đổi đường dẫn đến FXML
-            String fxmlPath = Paths.get("src", "main", "resources", "view", "MainView.fxml").toAbsolutePath().toString();
+            String fxmlPath = Paths.get("src", "main", "resources", "view", "LoginView.fxml").toAbsolutePath().toString();
             FXMLLoader loader = new FXMLLoader(Paths.get(fxmlPath).toUri().toURL());
             Parent root = loader.load();
 

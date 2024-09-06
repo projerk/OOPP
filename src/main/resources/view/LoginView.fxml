@@ -7,16 +7,16 @@
 <?import javafx.scene.layout.VBox?>
 
 <VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="controller.MainController" spacing="10" alignment="CENTER">
+      fx:controller="controller.LoginController" spacing="10" alignment="CENTER">
     <padding>
         <Insets top="20" right="20" bottom="20" left="20"/>
     </padding>
     
     <Label text="Username:"/>
-    <TextField fx:id="userNameField"/>
+    <TextField fx:id="usernameField"/>
     
     <Label text="Password:"/>
-    <TextField fx:id="passWordField"/>
+    <TextField fx:id="passwordField"/>
     
     <Button text="Submit" onAction="#handleSubmit"/>
     
