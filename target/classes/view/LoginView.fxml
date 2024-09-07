@@ -4,21 +4,66 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 
-<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="controller.LoginController" spacing="10" alignment="CENTER">
+<!-- <VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.LoginController" stylesheets="@LoginView.css">
     <padding>
-        <Insets top="20" right="20" bottom="20" left="20"/>
+        <Insets top="50" right="50" bottom="50" left="50"/>
     </padding>
-    
-    <Label text="Username:"/>
-    <TextField fx:id="usernameField"/>
-    
-    <Label text="Password:"/>
-    <TextField fx:id="passwordField"/>
-    
-    <Button text="Submit" onAction="#handleSubmit"/>
+    <VBox alignment = "CENTER">
+        <Label text = "Projerk App"/>
+    </VBox>
+    <VBox alignment = "CENTER">
+        <padding>
+            <Insets top="50" right="50" bottom="50" left="50"/>
+        </padding>
+
+        <VBox>
+            <VBox>
+                <Label text="Username:"/>
+                <TextField fx:id="usernameField"/>
+            </VBox>
+            <VBox>
+                <padding>
+                    <Insets top="25"/>
+                </padding>
+                <Label text="Password:"/>
+                <PasswordField fx:id="passwordField"/>
+            </VBox>
+        </VBox>
+        <VBox alignment= "CENTER">
+            <padding>
+                <Insets top="25"/>
+            </padding>
+            <Button text="Submit" onAction="#handleSubmit"/>
+        </VBox>
+    </VBox>
     
     <Label fx:id="resultLabel"/>
-</VBox>
+</VBox> -->
+
+
+
+<HBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.LoginController"
+      stylesheets="@LoginView.css"
+      spacing="0">
+    
+    <HBox styleClass="hbox-red" HBox.hgrow="ALWAYS">
+        <Label text="Username:"/>
+    </HBox>
+
+    <HBox styleClass="hbox-blue" HBox.hgrow="ALWAYS">
+            <ImageView fitHeight="120" fitWidth="1000"
+                pickOnBounds="true" preserveRatio="true">
+                    <Image url="@images/img.png"/>
+            </ImageView>
+    </HBox>
+
+</HBox>

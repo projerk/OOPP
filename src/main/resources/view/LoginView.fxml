@@ -4,21 +4,62 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 
-<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="controller.LoginController" spacing="10" alignment="CENTER">
-    <padding>
-        <Insets top="20" right="20" bottom="20" left="20"/>
-    </padding>
+
+<HBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.LoginController"
+      stylesheets="@LoginView.css"
+      spacing="0">
     
-    <Label text="Username:"/>
-    <TextField fx:id="usernameField"/>
-    
-    <Label text="Password:"/>
-    <TextField fx:id="passwordField"/>
-    
-    <Button text="Submit" onAction="#handleSubmit"/>
-    
-    <Label fx:id="resultLabel"/>
-</VBox>
+    <HBox styleClass="hbox-red" HBox.hgrow="ALWAYS" alignment = "CENTER">
+        <padding>
+            <Insets top="100" right="0" bottom="100" left="0"/>
+        </padding>
+        <VBox>
+            <VBox alignment = "CENTER">
+                <Label styleClass="title" text = "Projerk"/>
+            </VBox>
+
+            <VBox alignment = "CENTER" VBox.vgrow = "ALWAYS">
+                <padding>
+                    <Insets top="20" right="0" bottom="50" left="0"/>
+                </padding>
+
+                <VBox>
+                    <VBox>
+                        <Label text="Username:"/>
+                        <TextField fx:id="usernameField"/>
+                    </VBox>
+                    <VBox>
+                        <padding>
+                            <Insets top="25"/>
+                        </padding>
+                        <Label text="Password:"/>
+                        <PasswordField fx:id="passwordField"/>
+                    </VBox>
+                </VBox>
+                <VBox alignment= "CENTER">
+                    <padding>
+                        <Insets top="25"/>
+                    </padding>
+                    <Button text="Submit" onAction="#handleSubmit"/>
+                </VBox>
+            </VBox>
+        </VBox>
+
+    </HBox>
+
+    <HBox styleClass="hbox-blue" HBox.hgrow="ALWAYS">
+            <ImageView fitHeight = "1100" fitWidth = "1100" translateY = "-100"
+                pickOnBounds="true" preserveRatio="true">
+                    <Image url="@images/mmm.jpg"/>
+            </ImageView>
+    </HBox>
+
+</HBox>
