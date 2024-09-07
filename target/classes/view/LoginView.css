@@ -2,12 +2,10 @@
     -fx-background-color: #198754;
     -fx-text-fill: white;
     -fx-font-size: 16px;
-    -fx-opacity: 0.8;
+    -fx-opacity: 1;
 }
 
 .vbox {
-    -fx-padding: 20px;
-    -fx-spacing: 10px;
     -fx-background-color: red;
 }
 
@@ -17,8 +15,21 @@
     -fx-background-color: #ffffff;
 }
 
-
-.hbox-red {
-    -fx-background-color: red;
+.label {
+    -fx-text-fill: white;
 }
+
+
+.hbox-red, .hbox-blue {
+    -fx-background-color: #2b302d;
+    -fx-pref-width: 0;
+    -fx-min-width: 0;
+    -fx-max-width: Infinity;
+    -fx-hgrow: ALWAYS;
+}
+
+.title {
+    -fx-font-size: 60px;
+}
+
 

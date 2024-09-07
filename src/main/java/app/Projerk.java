@@ -31,9 +31,9 @@ public class Projerk extends Application {
             String fxmlPath = Paths.get("src", "main", "resources", "view", fxmlFile).toAbsolutePath().toString();
             FXMLLoader loader = new FXMLLoader(Paths.get(fxmlPath).toUri().toURL());
             Parent root = loader.load();
-
             Scene scene = new Scene(root, width, height);
             primaryStage.setScene(scene);
+            setMaximized(true);
             primaryStage.show();
         } catch (IOException e) {
             e.printStackTrace();

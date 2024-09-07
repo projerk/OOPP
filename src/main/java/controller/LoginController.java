@@ -16,6 +16,7 @@ public class LoginController {
     private TextField passwordField;
     @FXML
     private Label resultLabel;
+    private int status;
 
     @FXML
     private void handleSubmit() {
@@ -28,7 +29,14 @@ public class LoginController {
 
         if (authorization.isPasswordValid() && authorization.isUsernameValid()) {
             try {
-                response = apiService.APISignin(username, password);
+                status = apiService.APISignin(username, password);
+
+                if (status == 200) {
+                    
+                }
+                else if (status == 401) {
+                    response = "Signin Failed";
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             } 
@@ -36,10 +44,9 @@ public class LoginController {
         else {
             response = "Please ensure your password is longer than 6 characters";
         }
-
-        resultLabel.setText(response);
-        app.changeScene("DashBoard.fxml", 1000, 800);
-        app.setMaximized(true);
+        if (status == 200) {
+            app.changeScene("DashBoard.fxml", 10000, 10000);
+            app.setMaximized(true);
+        }
     }
-
 }

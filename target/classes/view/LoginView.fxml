@@ -11,58 +11,57 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 
-<!-- <VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="controller.LoginController" stylesheets="@LoginView.css">
-    <padding>
-        <Insets top="50" right="50" bottom="50" left="50"/>
-    </padding>
-    <VBox alignment = "CENTER">
-        <Label text = "Projerk App"/>
-    </VBox>
-    <VBox alignment = "CENTER">
-        <padding>
-            <Insets top="50" right="50" bottom="50" left="50"/>
-        </padding>
-
-        <VBox>
-            <VBox>
-                <Label text="Username:"/>
-                <TextField fx:id="usernameField"/>
-            </VBox>
-            <VBox>
-                <padding>
-                    <Insets top="25"/>
-                </padding>
-                <Label text="Password:"/>
-                <PasswordField fx:id="passwordField"/>
-            </VBox>
-        </VBox>
-        <VBox alignment= "CENTER">
-            <padding>
-                <Insets top="25"/>
-            </padding>
-            <Button text="Submit" onAction="#handleSubmit"/>
-        </VBox>
-    </VBox>
-    
-    <Label fx:id="resultLabel"/>
-</VBox> -->
-
-
 
 <HBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="controller.LoginController"
       stylesheets="@LoginView.css"
       spacing="0">
     
-    <HBox styleClass="hbox-red" HBox.hgrow="ALWAYS">
-        <Label text="Username:"/>
+    <HBox styleClass="hbox-red" HBox.hgrow="ALWAYS" alignment = "CENTER">
+        <padding>
+            <Insets top="100" right="0" bottom="100" left="0"/>
+        </padding>
+        <VBox>
+            <VBox alignment = "CENTER">
+                <Label styleClass="title" text = "Projerk"/>
+            </VBox>
+
+            <VBox alignment = "CENTER" VBox.vgrow = "ALWAYS">
+                <padding>
+                    <Insets top="20" right="0" bottom="50" left="0"/>
+                </padding>
+
+                <VBox>
+                    <VBox>
+                        <Label text="Username:"/>
+                        <TextField fx:id="usernameField"/>
+                    </VBox>
+                    <VBox>
+                        <padding>
+                            <Insets top="25"/>
+                        </padding>
+                        <Label text="Password:"/>
+                        <PasswordField fx:id="passwordField"/>
+                    </VBox>
+                </VBox>
+                <VBox alignment= "CENTER">
+                    <padding>
+                        <Insets top="25"/>
+                    </padding>
+                    <Button text="Submit" onAction="#handleSubmit"/>
+                </VBox>
+                <VBox alignment = "CENTER">
+                    <Label fx:id = "resultLabel"/>
+                </VBox>
+            </VBox>
+        </VBox>
+
     </HBox>
 
     <HBox styleClass="hbox-blue" HBox.hgrow="ALWAYS">
-            <ImageView fitHeight="120" fitWidth="1000"
+            <ImageView fitHeight = "1100" fitWidth = "1100"
                 pickOnBounds="true" preserveRatio="true">
-                    <Image url="@images/img.png"/>
+                    <Image url="@images/pattern.jpg"/>
             </ImageView>
     </HBox>
 

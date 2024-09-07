@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 
@@ -19,11 +20,11 @@
     
     <HBox styleClass="hbox-red" HBox.hgrow="ALWAYS" alignment = "CENTER">
         <padding>
-            <Insets top="100" right="0" bottom="100" left="0"/>
+            <Insets top="100" right="170" bottom="100" left="170"/>
         </padding>
-        <VBox>
+        <VBox HBox.hgrow = "ALWAYS">
             <VBox alignment = "CENTER">
-                <Label styleClass="title" text = "Projerk"/>
+                <Label styleClass="title" text = "Login"/>
             </VBox>
 
             <VBox alignment = "CENTER" VBox.vgrow = "ALWAYS">
@@ -48,7 +49,20 @@
                     <padding>
                         <Insets top="25"/>
                     </padding>
-                    <Button text="Submit" onAction="#handleSubmit"/>
+                    <HBox alignment = "CENTER">
+                        <VBox>
+                            <Button text="Submit" onAction="#handleSubmit"/>
+                        </VBox>
+                        <VBox>
+                            <padding>
+                                <Insets left="15"/>
+                            </padding>
+                            <Button text="Register"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+                <VBox alignment = "CENTER">
+                    <Label fx:id = "resultLabel"/>
                 </VBox>
             </VBox>
         </VBox>
@@ -56,10 +70,17 @@
     </HBox>
 
     <HBox styleClass="hbox-blue" HBox.hgrow="ALWAYS">
-            <ImageView fitHeight = "1100" fitWidth = "1100" translateY = "-100"
+        <StackPane>
+            <ImageView fitHeight = "1100" fitWidth = "1100"
                 pickOnBounds="true" preserveRatio="true">
-                    <Image url="@images/mmm.jpg"/>
+                    <Image url="@images/pattern.jpg"/>
             </ImageView>
+            <VBox styleClass = "test" HBox.hgrow = "ALWAYS" alignment = "CENTER">
+                <!-- <padding>
+                    <Insets top="150" left = "100"/>
+                </padding> -->
+            </VBox>
+        </StackPane>
     </HBox>
 
 </HBox>
