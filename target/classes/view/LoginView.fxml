@@ -8,22 +8,24 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 
 
 <HBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="controller.LoginController"
-      stylesheets="@LoginView.css"
+      stylesheets="@css/LoginView.css"
       spacing="0">
     
     <HBox styleClass="hbox-red" HBox.hgrow="ALWAYS" alignment = "CENTER">
         <padding>
-            <Insets top="100" right="0" bottom="100" left="0"/>
+            <Insets top="100" right="170" bottom="100" left="170"/>
         </padding>
-        <VBox>
+        <VBox HBox.hgrow = "ALWAYS">
             <VBox alignment = "CENTER">
-                <Label styleClass="title" text = "Projerk"/>
+                <Label styleClass="title" text = "Login"/>
             </VBox>
 
             <VBox alignment = "CENTER" VBox.vgrow = "ALWAYS">
@@ -48,7 +50,17 @@
                     <padding>
                         <Insets top="25"/>
                     </padding>
-                    <Button text="Submit" onAction="#handleSubmit"/>
+                    <HBox alignment = "CENTER">
+                        <VBox>
+                            <Button text="Submit" onAction="#handleSubmit"/>
+                        </VBox>
+                        <VBox>
+                            <padding>
+                                <Insets left="15"/>
+                            </padding>
+                            <Button text="Register"/>
+                        </VBox>
+                    </HBox>
                 </VBox>
                 <VBox alignment = "CENTER">
                     <Label fx:id = "resultLabel"/>
@@ -59,10 +71,48 @@
     </HBox>
 
     <HBox styleClass="hbox-blue" HBox.hgrow="ALWAYS">
+        <StackPane>
             <ImageView fitHeight = "1100" fitWidth = "1100"
                 pickOnBounds="true" preserveRatio="true">
                     <Image url="@images/pattern.jpg"/>
             </ImageView>
+            <VBox styleClass = "test" HBox.hgrow = "ALWAYS" alignment = "CENTER" spacing = "20">
+
+                <StackPane fx:id = "card1" translateX = "300" alignment = "TOP_LEFT" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+                    <Rectangle width="150" height="200" fill="#313866" stroke="black" strokeWidth="1"
+                            arcWidth="20" arcHeight="20"/>
+
+                    <VBox alignment="TOP_LEFT" spacing="10" style="-fx-padding: 20;">
+                        <Label styleClass = "word" text="Aesthetic"/>
+                        <Label styleClass = "type" text="adj."/>
+                        <Label styleClass = "definition" text="Nghệ thuật"/>
+                    </VBox>
+                </StackPane>
+
+                <StackPane fx:id = "card2" translateX = "500" alignment = "TOP_LEFT" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+                    <Rectangle width="150" height="200" fill="#313866" stroke="black" strokeWidth="1"
+                            arcWidth="20" arcHeight="20"/>
+
+                    <VBox alignment="TOP_LEFT" spacing="10" style="-fx-padding: 20;">
+                        <Label styleClass = "word" text="Code"/>
+                        <Label styleClass = "type" text="verb."/>
+                        <Label styleClass = "definition" text="Đam mê"/>
+                    </VBox>
+                </StackPane>
+
+                <StackPane fx:id = "card3" translateX = "100" alignment = "TOP_LEFT" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+                    <Rectangle width="150" height="200" fill="#313866" stroke="black" strokeWidth="1"
+                            arcWidth="20" arcHeight="20"/>
+
+                    <VBox alignment="TOP_LEFT" spacing="10" style="-fx-padding: 20;">
+                        <Label styleClass = "word" text="Love"/>
+                        <Label styleClass = "type" text="noun."/>
+                        <Label styleClass = "definition" text="không tồn tại"/>
+                    </VBox>
+                </StackPane>
+
+            </VBox>
+        </StackPane>
     </HBox>
 
 </HBox>

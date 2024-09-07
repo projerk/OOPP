@@ -7,11 +7,17 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.nio.file.Paths;
+import javafx.stage.Screen;
+import javafx.geometry.Rectangle2D;
+
 
 public class Projerk extends Application {
     private static Projerk instance;
     private Stage primaryStage;
-
+    private Screen screen = Screen.getPrimary();
+    private double screenWidth;
+    private double screenHeight;
+    Rectangle2D bounds = screen.getVisualBounds();
     public Projerk() {}
 
     public static Projerk getInstance() {
@@ -21,17 +27,20 @@ public class Projerk extends Application {
     @Override
     public void start(Stage primaryStage) {
         instance = this;
+        screenWidth = bounds.getWidth();
+        screenHeight = bounds.getHeight();
         this.primaryStage = primaryStage;
-        loadScene("LoginView.fxml", 800, 600);
+        loadScene("LoginView.fxml", screenWidth, screenHeight);
         setMaximized(true);
     }
 
-    public void changeScene(String fxmlFile, int width, int height) {
+    public void changeScene(String fxmlFile, double width, double height) {
+        
         try {
             String fxmlPath = Paths.get("src", "main", "resources", "view", fxmlFile).toAbsolutePath().toString();
             FXMLLoader loader = new FXMLLoader(Paths.get(fxmlPath).toUri().toURL());
             Parent root = loader.load();
-            Scene scene = new Scene(root, width, height);
+            Scene scene = new Scene(root, screenWidth, screenHeight);
             primaryStage.setScene(scene);
             setMaximized(true);
             primaryStage.show();
@@ -41,8 +50,8 @@ public class Projerk extends Application {
         }
     }
 
-    private void loadScene(String fxmlFile, int width, int height) {
-        changeScene(fxmlFile, width, height);
+    private void loadScene(String fxmlFile, double width, double height) {
+        changeScene(fxmlFile, screenWidth, screenHeight);
     }
 
     public void setMaximized(boolean state) {

@@ -1,3 +1,4 @@
+controller\DashboardController.class
 model\Authorization.class
 model\Person.class
 controller\MainController.class

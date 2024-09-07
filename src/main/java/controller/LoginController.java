@@ -1,6 +1,13 @@
 package controller;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.RotateTransition;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
+import javafx.scene.layout.StackPane;
+import javafx.scene.transform.Rotate;
+import javafx.util.Duration;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import model.Authorization;
@@ -16,6 +23,7 @@ public class LoginController {
     private TextField passwordField;
     @FXML
     private Label resultLabel;
+
     private int status;
 
     @FXML
@@ -45,7 +53,7 @@ public class LoginController {
             response = "Please ensure your password is longer than 6 characters";
         }
         if (status == 200) {
-            app.changeScene("DashBoard.fxml", 10000, 10000);
+            app.changeScene("DashboardView.fxml", 10000, 10000);
             app.setMaximized(true);
         }
     }

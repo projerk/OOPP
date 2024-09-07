@@ -1,0 +1,47 @@
+.sidebar {
+    -fx-background-color: #171b1d;
+    -fx-background-radius: 10;
+}
+
+.dashboard {
+    -fx-background: #0a0e0f;
+    -fx-border-color: #0a0e0f;
+}
+
+.sidebar-item {
+    -fx-background-color: #148761;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-pref-width: 180px;  
+    -fx-pref-height: 50px;  
+    -fx-min-width: 30px; 
+    -fx-min-height: 30px;  
+    -fx-max-width: 200px;   
+    -fx-max-height: 200px; 
+}
+
+.container {
+    -fx-background-color: #0a0e0f;
+}
+
+.sidebar-item-content {
+    -fx-text-fill: #e9e9ea;
+    -fx-font-size: 15px;
+    -fx-font-family: "Verdana";
+}
+
+.information-container {
+    -fx-background-color: blue;
+    -fx-background-radius: 10;
+}
+
+.scroll-pane-container {
+    -fx-background-color: green;
+    -fx-background-radius: 10;
+}
+
+.scroll-pane:focused {
+    -fx-focus-color: transparent; 
+    -fx-faint-focus-color: transparent;  
+}
+
