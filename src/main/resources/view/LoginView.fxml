@@ -9,13 +9,14 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Priority?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 
 
 <HBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="controller.LoginController"
-      stylesheets="@LoginView.css"
+      stylesheets="@css/LoginView.css"
       spacing="0">
     
     <HBox styleClass="hbox-red" HBox.hgrow="ALWAYS" alignment = "CENTER">
@@ -75,10 +76,40 @@
                 pickOnBounds="true" preserveRatio="true">
                     <Image url="@images/pattern.jpg"/>
             </ImageView>
-            <VBox styleClass = "test" HBox.hgrow = "ALWAYS" alignment = "CENTER">
-                <!-- <padding>
-                    <Insets top="150" left = "100"/>
-                </padding> -->
+            <VBox styleClass = "test" HBox.hgrow = "ALWAYS" alignment = "CENTER" spacing = "20">
+                <StackPane translateX = "300" alignment = "TOP_LEFT" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+                    <Rectangle width="150" height="200" fill="#313866" stroke="black" strokeWidth="1"
+                            arcWidth="20" arcHeight="20"/>
+
+                    <VBox alignment="TOP_LEFT" spacing="10" style="-fx-padding: 20;">
+                        <Label styleClass = "word" text="Aesthetic"/>
+                        <Label styleClass = "type" text="adj."/>
+                        <Label styleClass = "definition" text="Nghệ thuật"/>
+                    </VBox>
+                </StackPane>
+
+                <StackPane translateX = "500" alignment = "TOP_LEFT" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+                    <Rectangle width="150" height="200" fill="#313866" stroke="black" strokeWidth="1"
+                            arcWidth="20" arcHeight="20"/>
+
+                    <VBox alignment="TOP_LEFT" spacing="10" style="-fx-padding: 20;">
+                        <Label styleClass = "word" text="Code"/>
+                        <Label styleClass = "type" text="verb."/>
+                        <Label styleClass = "definition" text="Đam mê"/>
+                    </VBox>
+                </StackPane>
+
+                <StackPane translateX = "100" alignment = "TOP_LEFT" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+                    <Rectangle width="150" height="200" fill="#313866" stroke="black" strokeWidth="1"
+                            arcWidth="20" arcHeight="20"/>
+
+                    <VBox alignment="TOP_LEFT" spacing="10" style="-fx-padding: 20;">
+                        <Label styleClass = "word" text="Love"/>
+                        <Label styleClass = "type" text="noun."/>
+                        <Label styleClass = "definition" text="không tồn tại"/>
+                    </VBox>
+                </StackPane>
+
             </VBox>
         </StackPane>
     </HBox>

@@ -36,4 +36,22 @@
     -fx-background-color: red;
 } */
 
+.word {
+    -fx-font-family: 'Verdana';
+    -fx-text-fill: #964EC2;
+    -fx-font-size: 20px;
+}
+
+.type {
+    -fx-font-family: 'Verdana';
+    -fx-text-fill: #964EC2;
+    -fx-font-size: 10px;
+}
+
+.definition {
+    -fx-font-family: 'Verdana';
+    -fx-text-fill: #FF7BBF;
+    -fx-font-size: 13px;
+}
+
 
