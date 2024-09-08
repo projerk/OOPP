@@ -4,15 +4,15 @@
 }
 
 .dashboard {
-    -fx-background-color: #171b1d;
-    -fx-background-radius: 10;
+    -fx-background: #0a0e0f;
+    -fx-border-color: #0a0e0f;
 }
 
 .sidebar-item {
     -fx-background-color: #148761;
     -fx-text-fill: white;
     -fx-background-radius: 10;
-    -fx-pref-width: 150px;  
+    -fx-pref-width: 180px;  
     -fx-pref-height: 50px;  
     -fx-min-width: 30px; 
     -fx-min-height: 30px;  
@@ -26,6 +26,122 @@
 
 .sidebar-item-content {
     -fx-text-fill: #e9e9ea;
-    -fx-font-size: 10px;
-    -fx-font-family: "Georgia";
+    -fx-font-size: 15px;
+    -fx-font-family: "Verdana";
+}
+
+.information-container {
+    -fx-background-radius: 10;
+    -fx-background-color: #171b1d;
+}
+
+.scroll-pane-container {
+    -fx-background-color: #0a0e0f;
+    -fx-background-radius: 10;
+}
+
+.scroll-pane:focused {
+    -fx-focus-color: transparent; 
+    -fx-faint-focus-color: transparent;  
+}
+
+.scroll-pane .scroll-bar:vertical, 
+.scroll-pane .scroll-bar:horizontal {
+    -fx-opacity: 0; 
+    -fx-padding: 0;
+    -fx-pref-width: 0; 
+    -fx-pref-height: 0; 
+}
+
+.avatar {
+    -fx-border-radius: 100px;
+}
+
+/* .avatar-name-container {
+    -fx-background-color: red;
+} */
+
+/* .streak-container {
+    -fx-background-color: yellow;
+} */
+
+.user-name-text {
+    -fx-font-size: 30px;
+    -fx-font-family: "Verdana";
+    -fx-text-fill: #e9e9ea;
+}
+
+.streak-text {
+    -fx-font-size: 15px;
+    -fx-font-family: "Verdana";
+    -fx-text-fill: #e9e9ea;
+}
+
+.streak-progress-text {
+    -fx-font-size: 30px;
+    -fx-font-family: "Verdana";
+    -fx-text-fill: #e9e9ea;
+}
+
+.horizontal-border {
+    -fx-pref-height: 1px;
+    -fx-background-color: #494d51;
+}
+
+.vertical-border {
+    -fx-pref-width: 1px;
+    -fx-background-color: #494d51;
+}
+
+.institution-text {
+    -fx-font-size: 15px;
+    -fx-font-family: "Verdana";
+    -fx-text-fill: #bebec2;
+}
+
+.procifiency-text {
+    -fx-font-size: 15px;
+    -fx-font-family: "Verdana";
+    -fx-text-fill: #bebec2;
+}
+
+.membership-text {
+    -fx-font-size: 15px;
+    -fx-font-family: "Verdana";
+    -fx-text-fill: #bebec2;
+}
+
+.institution-text-content {
+    -fx-font-size: 24px;
+    -fx-font-family: "Verdana";
+    -fx-text-fill: #e9e9ea;
+}
+
+.procifiency-text-content {
+    -fx-font-size: 24px;
+    -fx-font-family: "Verdana";
+    -fx-text-fill: #e9e9ea;
+}
+
+.membership-text-content {
+    -fx-font-size: 24px;
+    -fx-font-family: "Verdana";
+    -fx-text-fill: #e9e9ea;
+}
+
+.item-text {
+    -fx-font-size: 15px;
+    -fx-font-family: "Verdana";
+    -fx-text-fill: #bebec2;
+}
+
+.item-text-content {
+    -fx-font-size: 30px;
+    -fx-font-family: "Verdana";
+    -fx-text-fill: #e9e9ea;
+}
+
+.vlk {
+    -fx-background-color: #171b1d;
+    -fx-background-radius: 10px;
 }

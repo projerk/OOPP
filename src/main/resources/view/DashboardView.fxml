@@ -13,11 +13,14 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.XYChart?>
 
 <HBox styleClass = "container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@css/DashboardView.css"
       fx:controller="controller.DashboardController" spacing="20" >
     <padding>
-        <Insets top="20" right="20" bottom="20" left="10"/>
+        <Insets top="20" right="10" bottom="20" left="10"/>
     </padding>
     <VBox styleClass = "sidebar" spacing = "10">
         <padding>
@@ -55,10 +58,10 @@
         <!-- <padding   #494d51>
             <Insets top="20" right="20" bottom="20" left="20"/>
         </padding> -->
-        <VBox styleClass = "scroll-pane-container" HBox.hgrow = "ALWAYS" alignment = "CENTER">
-            <!-- <padding>
-                <Insets top="20" right="20" bottom="20" left="20"/>
-            </padding> -->
+        <VBox styleClass = "scroll-pane-container" HBox.hgrow = "ALWAYS" VBox.vgrow = "ALWAYS" alignment = "CENTER" spacing = "20">
+            <padding>
+                <Insets top="0" right="0" bottom="0" left="0"/>
+            </padding>
             <HBox styleClass = "information-container" HBox.hgrow = "ALWAYS" spacing = "10">
                 <padding>
                     <Insets top="20" right="20" bottom="20" left="20"/>
@@ -143,6 +146,9 @@
                     </HBox>
                 </VBox>
             </HBox>
+            <VBox fx:id = "chartContainer" styleClass = "vlk" HBox.hgrow = "ALWAYS">
+                
+            </VBox>
         </VBox>
     </ScrollPane>
 </HBox>
