@@ -1,3 +1,5 @@
+package model;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -7,18 +9,22 @@ import java.sql.Statement;
 import org.json.JSONObject;
 
 public class DBHelper {
-    private static final String URL = "jdbc:sqlite:mydatabase.db"; // Đường dẫn tới cơ sở dữ liệu SQLite
 
-    public static Connection connect() {
+    static {
         try {
-            return DriverManager.getConnection(URL);
-        } catch (SQLException e) {
+            Class.forName("org.sqlite.JDBC");
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
-            return null;
+            throw new RuntimeException("SQLite JDBC driver not found");
         }
     }
 
-    public static String searchWord(String word) {
+    public static Connection connect() throws SQLException {
+        String url = "jdbc:sqlite:C:/Users/duong/Desktop/OOPP/database.db";
+        return DriverManager.getConnection(url);
+    }
+
+    public static JSONObject searchWord(String word) {
         JSONObject json = new JSONObject();
         String sql = "SELECT word, pronunciation, meaning FROM engviet WHERE word = ?";
         
@@ -42,7 +48,7 @@ public class DBHelper {
             json.put("error", "Error occurred while searching for the word.");
         }
         
-        return json.toString(); 
+        return json;
     }
 
 

@@ -1,11 +1,14 @@
-DBHelper.class
+model\Example.class
 controller\DashboardController.class
 model\Authorization.class
 model\Person.class
 controller\MainController.class
 controller\SidebarController.class
 controller\LoginController.class
+model\Type.class
+model\DBHelper.class
 controller\DictionaryController.class
+model\Meaning.class
 app\Projerk.class
 model\Word.class
 model\APIService.class

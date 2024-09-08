@@ -1,4 +1,5 @@
 package model;
+import java.util.ArrayList;
 
 public class Meaning {
     private String meaning;
@@ -21,7 +22,7 @@ public class Meaning {
         return examples.size();
     }
 
-    public getExample(int idx) {
+    public Example getExample(int idx) {
         return examples.get(idx);
     }
 }

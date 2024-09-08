@@ -15,14 +15,14 @@ public class Type {
     }
 
     public void addMeaning(Meaning meaning) {
-        types.add(meaning);
+        meanings.add(meaning);
     }
 
     public int getMeaningArraySize() {
         return this.meanings.size();
     }
 
-    public Type getMeaning(int idx) {
+    public Meaning getMeaning(int idx) {
         return meanings.get(idx);
     }
 }

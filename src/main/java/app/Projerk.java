@@ -26,6 +26,7 @@ public class Projerk extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+        System.out.println(System.getProperty("java.class.path"));
         instance = this;
         screenWidth = bounds.getWidth();
         screenHeight = bounds.getHeight();

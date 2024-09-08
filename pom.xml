@@ -27,6 +27,16 @@
             <version>${javafx.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.16</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>2.0.16</version>
+        </dependency>
+        <dependency>
             <groupId>org.xerial</groupId>
             <artifactId>sqlite-jdbc</artifactId>
             <version>3.39.4.0</version> <!-- Sử dụng phiên bản mới nhất -->
@@ -40,7 +50,7 @@
 
     <build>
         <plugins>
-            <!-- Add this section if you want to customize how Maven builds the JAR file -->
+            <!-- Plugin để xây dựng JAR -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -51,6 +61,16 @@
                             <Main-Class>app.Projerk</Main-Class>
                         </manifestEntries>
                     </archive>
+                </configuration>
+            </plugin>
+
+            <!-- Plugin để chạy ứng dụng -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <mainClass>app.Projerk</mainClass>
                 </configuration>
             </plugin>
         </plugins>
