@@ -17,138 +17,99 @@
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.XYChart?>
 
-<HBox styleClass = "container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@css/DashboardView.css"
-      fx:controller="controller.DashboardController" spacing="20" >
+
+<VBox styleClass = "scroll-pane-container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" HBox.hgrow = "ALWAYS" VBox.vgrow = "ALWAYS" alignment = "CENTER" spacing = "20" 
+        stylesheets="@css/DashboardView.css"
+      fx:controller="controller.DashboardController">
+
     <padding>
-        <Insets top="20" right="10" bottom="20" left="10"/>
+        <Insets top="0" right="0" bottom="0" left="0"/>
     </padding>
-    <VBox styleClass = "sidebar" spacing = "10">
+    <HBox styleClass = "information-container" HBox.hgrow = "ALWAYS" spacing = "10">
         <padding>
-            <Insets top="10" right="10" bottom="10" left="10"/>
-        </padding>
-        <HBox styleClass = "sidebar-item" alignment = "CENTER_LEFT" spacing = "10">
-            <padding>
-                <Insets left="10"/>
-            </padding>  
-            <ImageView fx:id="buttonIcon" fitHeight="35" fitWidth="35" preserveRatio="true">
-                <Image url="@images/profile-icon.png"/> 
-            </ImageView>
-            <Label styleClass = "sidebar-item-content" text = "Dashboard"/>
-        </HBox>
-        <HBox styleClass = "sidebar-item" alignment = "CENTER_LEFT" spacing = "10">
-            <padding>
-                <Insets left="10"/>
-            </padding> 
-            <ImageView fx:id="buttonIcon" fitHeight="35" fitWidth="35" preserveRatio="true">
-                <Image url="@images/profile-icon.png"/> 
-            </ImageView>
-            <Label styleClass = "sidebar-item-content" text = "Dictionary"/>
-        </HBox>
-        <HBox styleClass = "sidebar-item" alignment = "CENTER_LEFT" spacing = "10">
-            <padding>
-                <Insets left="10"/>
-            </padding> 
-            <ImageView fx:id="buttonIcon" fitHeight="35" fitWidth="35" preserveRatio="true">
-                <Image url="@images/profile-icon.png"/> 
-            </ImageView>
-            <Label styleClass = "sidebar-item-content" text = "Game"/>
-        </HBox>
-    </VBox>
-    <ScrollPane styleClass = "dashboard" HBox.hgrow = "ALWAYS" fitToWidth="true">
-        <!-- <padding   #494d51>
             <Insets top="20" right="20" bottom="20" left="20"/>
-        </padding> -->
-        <VBox styleClass = "scroll-pane-container" HBox.hgrow = "ALWAYS" VBox.vgrow = "ALWAYS" alignment = "CENTER" spacing = "20">
-            <padding>
-                <Insets top="0" right="0" bottom="0" left="0"/>
-            </padding>
-            <HBox styleClass = "information-container" HBox.hgrow = "ALWAYS" spacing = "10">
+        </padding>
+        <VBox styleClass = "personal-infomation-container" alignment = "CENTER">
+            <VBox styleClass = "avatar-name-container" alignment = "CENTER">
                 <padding>
-                    <Insets top="20" right="20" bottom="20" left="20"/>
+                    <Insets top="40" right="40" bottom="40" left="40"/>
                 </padding>
-                <VBox styleClass = "personal-infomation-container" alignment = "CENTER">
-                    <VBox styleClass = "avatar-name-container" alignment = "CENTER">
-                        <padding>
-                            <Insets top="40" right="40" bottom="40" left="40"/>
-                        </padding>
-                        <ImageView styleClass = "avatar" fitHeight="100" fitWidth="100" preserveRatio="true">
-                            <Image url="@images/profile-icon.png"/> 
-                        </ImageView>
+                <ImageView styleClass = "avatar" fitHeight="100" fitWidth="100" preserveRatio="true">
+                    <Image url="@images/profile-icon.png"/> 
+                </ImageView>
 
-                        <Label styleClass = "user-name-text" text = "ngducduong"/>
-                    </VBox>
-                    <VBox styleClass = "horizontal-border" HBox.hgrow = "ALWAYS">
-                    </VBox>
-                    <HBox styleClass = "streak-container" alignment = "CENTER">
-                        <ImageView styleClass = "avatar" fitHeight="100" fitWidth="100" preserveRatio="true">
-                            <Image url="@images/fire.png"/> 
-                        </ImageView>
+                <Label styleClass = "user-name-text" text = "ngducduong"/>
+            </VBox>
+            <VBox styleClass = "horizontal-border" HBox.hgrow = "ALWAYS">
+            </VBox>
+            <HBox styleClass = "streak-container" alignment = "CENTER">
+                <ImageView styleClass = "avatar" fitHeight="100" fitWidth="100" preserveRatio="true">
+                    <Image url="@images/fire.png"/> 
+                </ImageView>
 
-                        <VBox alignment = "CENTER">
-                            <Label styleClass = "streak-text" text = "Streak"/>
-                            <Label styleClass = "streak-progress-text" text = "130 days"/>
-                        </VBox>
-                    </HBox>
-                </VBox>
-                <VBox styleClass = "vertical-border" VBox.vgrow = "ALWAYS"> </VBox>
-                <VBox styleClass = "academic-infomation-container" HBox.hgrow = "ALWAYS">
-                    <HBox spacing = "15" alignment = "CENTER" HBox.hgrow = "ALWAYS" VBox.vgrow = "ALWAYS">
-                        <padding>
-                            <Insets top="20" right="10" bottom="20" left="10"/>
-                        </padding>
-                        <VBox spacing = "5" alignment = "CENTER_LEFT" HBox.hgrow = "ALWAYS">
-                            <Label styleClass = "institution-text" text = "Institution"/>
-                            <Label wrapText="true" styleClass = "institution-text-content" text = "University of Engineering and Technology"/>
-                        </VBox>
-                        <VBox spacing = "5"  alignment = "CENTER_LEFT" HBox.hgrow = "ALWAYS">
-                            <Label styleClass = "procifiency-text" text = "Proficiency"/>
-                            <Label wrapText="true" styleClass = "procifiency-text-content" text = "A1"/>
-                        </VBox>
-                        <VBox spacing = "5" HBox.hgrow = "ALWAYS" alignment = "CENTER_LEFT">
-                            <Label styleClass = "membership-text" text = "Membership"/>
-                            <Label wrapText="true" styleClass = "membership-text-content" text = "Premium"/>
-                        </VBox>
-                    </HBox>
-                    <VBox styleClass = "horizontal-border" HBox.hgrow = "ALWAYS"> </VBox>
-                    <HBox HBox.hgrow = "ALWAYS" spacing = "10" VBox.vgrow = "ALWAYS">
-                        <padding>
-                            <Insets top="20" right="10" bottom="20" left="10"/>
-                        </padding>
-                        <HBox styleClass = "word-container" spacing = "10" HBox.hgrow = "ALWAYS" alignment = "CENTER">
-                            <VBox styleClass = "word-text-container" spacing = "20">
-                                <Label styleClass = "item-text" text = "Word learned"/>
-                                <Label styleClass = "item-text-content" text = "999"/>
-                            </VBox>
-                            <ImageView styleClass = "avatar" fitHeight="70" fitWidth="70" preserveRatio="true">
-                                <Image url="@images/pencil.png"/> 
-                            </ImageView>
-                        </HBox>
-                        <VBox styleClass = "vertical-border" VBox.vgrow = "ALWAYS"> </VBox>
-                        <HBox styleClass = "exercise-container" spacing = "10" HBox.hgrow = "ALWAYS" alignment = "CENTER">
-                            <VBox styleClass = "exercise-text-container" spacing = "20">
-                                <Label styleClass = "item-text" text = "Exercise scores"/>
-                                <Label styleClass = "item-text-content" text = "123"/>
-                            </VBox>
-                            <ImageView styleClass = "avatar" fitHeight="70" fitWidth="70" preserveRatio="true">
-                                <Image url="@images/book-stack.png"/> 
-                            </ImageView>
-                        </HBox>
-                        <VBox styleClass = "vertical-border" VBox.vgrow = "ALWAYS"> </VBox>
-                        <HBox styleClass = "rank-container" spacing = "10" HBox.hgrow = "ALWAYS" alignment = "CENTER">
-                            <VBox styleClass = "rank-text-container" spacing = "20">
-                                <Label styleClass = "item-text" text = "Rank"/>
-                                <Label styleClass = "item-text-content" text = "Plantinum"/>
-                            </VBox>
-                            <ImageView styleClass = "avatar" fitHeight="70" fitWidth="70" preserveRatio="true">
-                                <Image url="@images/ranking.png"/> 
-                            </ImageView>
-                        </HBox>
-                    </HBox>
+                <VBox alignment = "CENTER">
+                    <Label styleClass = "streak-text" text = "Streak"/>
+                    <Label styleClass = "streak-progress-text" text = "130 days"/>
                 </VBox>
             </HBox>
-            <VBox fx:id = "chartContainer" styleClass = "vlk" HBox.hgrow = "ALWAYS">
-
-            </VBox>
         </VBox>
-    </ScrollPane>
-</HBox>
+        <VBox styleClass = "vertical-border" VBox.vgrow = "ALWAYS"> </VBox>
+        <VBox styleClass = "academic-infomation-container" HBox.hgrow = "ALWAYS">
+            <HBox spacing = "15" alignment = "CENTER" HBox.hgrow = "ALWAYS" VBox.vgrow = "ALWAYS">
+                <padding>
+                    <Insets top="20" right="10" bottom="20" left="10"/>
+                </padding>
+                <VBox spacing = "5" alignment = "CENTER_LEFT" HBox.hgrow = "ALWAYS">
+                    <Label styleClass = "institution-text" text = "Institution"/>
+                    <Label wrapText="true" styleClass = "institution-text-content" text = "University of Engineering and Technology"/>
+                </VBox>
+                <VBox spacing = "5"  alignment = "CENTER_LEFT" HBox.hgrow = "ALWAYS">
+                    <Label styleClass = "procifiency-text" text = "Proficiency"/>
+                    <Label wrapText="true" styleClass = "procifiency-text-content" text = "A1"/>
+                </VBox>
+                <VBox spacing = "5" HBox.hgrow = "ALWAYS" alignment = "CENTER_LEFT">
+                    <Label styleClass = "membership-text" text = "Membership"/>
+                    <Label wrapText="true" styleClass = "membership-text-content" text = "Premium"/>
+                </VBox>
+            </HBox>
+            <VBox styleClass = "horizontal-border" HBox.hgrow = "ALWAYS"> </VBox>
+            <HBox HBox.hgrow = "ALWAYS" spacing = "10" VBox.vgrow = "ALWAYS">
+                <padding>
+                    <Insets top="20" right="10" bottom="20" left="10"/>
+                </padding>
+                <HBox styleClass = "word-container" spacing = "10" HBox.hgrow = "ALWAYS" alignment = "CENTER">
+                    <VBox styleClass = "word-text-container" spacing = "20">
+                        <Label styleClass = "item-text" text = "Word learned"/>
+                        <Label styleClass = "item-text-content" text = "999"/>
+                    </VBox>
+                    <ImageView styleClass = "avatar" fitHeight="70" fitWidth="70" preserveRatio="true">
+                        <Image url="@images/pencil.png"/> 
+                    </ImageView>
+                </HBox>
+                <VBox styleClass = "vertical-border" VBox.vgrow = "ALWAYS"> </VBox>
+                <HBox styleClass = "exercise-container" spacing = "10" HBox.hgrow = "ALWAYS" alignment = "CENTER">
+                    <VBox styleClass = "exercise-text-container" spacing = "20">
+                        <Label styleClass = "item-text" text = "Exercise scores"/>
+                        <Label styleClass = "item-text-content" text = "123"/>
+                    </VBox>
+                    <ImageView styleClass = "avatar" fitHeight="70" fitWidth="70" preserveRatio="true">
+                        <Image url="@images/book-stack.png"/> 
+                    </ImageView>
+                </HBox>
+                <VBox styleClass = "vertical-border" VBox.vgrow = "ALWAYS"> </VBox>
+                <HBox styleClass = "rank-container" spacing = "10" HBox.hgrow = "ALWAYS" alignment = "CENTER">
+                    <VBox styleClass = "rank-text-container" spacing = "20">
+                        <Label styleClass = "item-text" text = "Rank"/>
+                        <Label styleClass = "item-text-content" text = "Plantinum"/>
+                    </VBox>
+                    <ImageView styleClass = "avatar" fitHeight="70" fitWidth="70" preserveRatio="true">
+                        <Image url="@images/ranking.png"/> 
+                    </ImageView>
+                </HBox>
+            </HBox>
+        </VBox>
+    </HBox>
+    <VBox fx:id = "chartContainer" styleClass = "vlk" HBox.hgrow = "ALWAYS">
+        
+    </VBox>
+</VBox>

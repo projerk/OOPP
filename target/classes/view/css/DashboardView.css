@@ -1,34 +1,4 @@
-.sidebar {
-    -fx-background-color: #171b1d;
-    -fx-background-radius: 10;
-}
 
-.dashboard {
-    -fx-background: #0a0e0f;
-    -fx-border-color: #0a0e0f;
-}
-
-.sidebar-item {
-    -fx-background-color: #148761;
-    -fx-text-fill: white;
-    -fx-background-radius: 10;
-    -fx-pref-width: 180px;  
-    -fx-pref-height: 50px;  
-    -fx-min-width: 30px; 
-    -fx-min-height: 30px;  
-    -fx-max-width: 200px;   
-    -fx-max-height: 200px; 
-}
-
-.container {
-    -fx-background-color: #0a0e0f;
-}
-
-.sidebar-item-content {
-    -fx-text-fill: #e9e9ea;
-    -fx-font-size: 15px;
-    -fx-font-family: "Verdana";
-}
 
 .information-container {
     -fx-background-radius: 10;
@@ -40,30 +10,9 @@
     -fx-background-radius: 10;
 }
 
-.scroll-pane:focused {
-    -fx-focus-color: transparent; 
-    -fx-faint-focus-color: transparent;  
-}
-
-.scroll-pane .scroll-bar:vertical, 
-.scroll-pane .scroll-bar:horizontal {
-    -fx-opacity: 0; 
-    -fx-padding: 0;
-    -fx-pref-width: 0; 
-    -fx-pref-height: 0; 
-}
-
 .avatar {
     -fx-border-radius: 100px;
 }
-
-/* .avatar-name-container {
-    -fx-background-color: red;
-} */
-
-/* .streak-container {
-    -fx-background-color: yellow;
-} */
 
 .user-name-text {
     -fx-font-size: 30px;

@@ -4,21 +4,57 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.XYChart?>
 
-<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="controller.MainController" spacing="10" alignment="CENTER">
+<HBox styleClass = "container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@css/MainView.css"
+      fx:controller="controller.MainController" spacing="20" >
     <padding>
-        <Insets top="20" right="20" bottom="20" left="20"/>
+        <Insets top="20" right="10" bottom="20" left="10"/>
     </padding>
-    
-    <Label text="First Name:"/>
-    <TextField fx:id="firstNameField"/>
-    
-    <Label text="Last Name:"/>
-    <TextField fx:id="lastNameField"/>
-    
-    <Button text="Submit" onAction="#handleSubmit"/>
-    
-    <Label fx:id="resultLabel"/>
-</VBox>
+    <VBox styleClass = "sidebar" spacing = "10">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+        <HBox fx:id = "dashboard" styleClass = "sidebar-item" alignment = "CENTER_LEFT" spacing = "10" onMouseClicked="#handleDashboardClick">
+            <padding>
+                <Insets left="10"/>
+            </padding>  
+            <ImageView fitHeight="35" fitWidth="35" preserveRatio="true">
+                <Image url="@images/profile-icon.png"/> 
+            </ImageView>
+            <Label styleClass = "sidebar-item-content" text = "Dashboard"/>
+        </HBox>
+        <HBox fx:id = "dictionary" styleClass = "sidebar-item" alignment = "CENTER_LEFT" spacing = "10" onMouseClicked="#handleDictionaryClick">
+            <padding>
+                <Insets left="10"/>
+            </padding> 
+            <ImageView fitHeight="35" fitWidth="35" preserveRatio="true">
+                <Image url="@images/profile-icon.png"/> 
+            </ImageView>
+            <Label styleClass = "sidebar-item-content" text = "Dictionary"/>
+        </HBox>
+        <HBox fx:id = "game" styleClass = "sidebar-item" alignment = "CENTER_LEFT" spacing = "10" onMouseClicked="#handleDashboardClick">
+            <padding>
+                <Insets left="10"/>
+            </padding> 
+            <ImageView fitHeight="35" fitWidth="35" preserveRatio="true">
+                <Image url="@images/profile-icon.png"/> 
+            </ImageView>
+            <Label styleClass = "sidebar-item-content" text = "Game"/>
+        </HBox>
+    </VBox>
+    <ScrollPane fx:id = "displayArea" styleClass = "dashboard" HBox.hgrow = "ALWAYS" fitToWidth="true">
+        <!-- View add here -->
+    </ScrollPane>
+</HBox>

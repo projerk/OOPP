@@ -2,7 +2,9 @@ controller\DashboardController.class
 model\Authorization.class
 model\Person.class
 controller\MainController.class
+controller\SidebarController.class
 controller\LoginController.class
+controller\DictionaryController.class
 app\Projerk.class
 model\Word.class
 model\APIService.class
