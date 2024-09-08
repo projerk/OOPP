@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Priority?>
 
 
-<VBox styleClass = "scroll-pane-container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" HBox.hgrow = "ALWAYS" VBox.vgrow = "ALWAYS" alignment = "CENTER" spacing = "20" 
+<VBox styleClass = "dictionary-main-container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" HBox.hgrow = "ALWAYS" VBox.vgrow = "ALWAYS" alignment = "CENTER" spacing = "20" 
         stylesheets="@css/DictionaryView.css"
       fx:controller="controller.DictionaryController">
 
@@ -15,11 +15,17 @@
         <Insets top="0" right="0" bottom="0" left="0"/>
     </padding>
 
-    <VBox HBox.hgrow = "ALWAYS" alignment = "CENTER">
-        <Label text = "Projerk Dictionary"/>
-        <HBox spacing = "20">
-            <TextField fx:id = "word"/>
-            <Button text = "Search"/>
+    <VBox styleClass = "dictionary-container" HBox.hgrow = "ALWAYS" alignment = "CENTER">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+        <Label styleClass = "dictionary-title-text" text = "Projerk Dictionary"/>
+        <HBox styleClass = "textfield-button-container" alignment = "CENTER" spacing = "20" HBox.hgrow = "ALWAYS">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <TextField styleClass = "dictionary-textfield" fx:id = "word"/>
+            <Button styleClass = "dictionary-search-button" text = "Search"/>
         </HBox>
     </VBox>
     
