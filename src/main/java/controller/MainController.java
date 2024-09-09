@@ -14,12 +14,13 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.nio.file.Paths;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.Node;
 import model.Person;
 
 public class MainController {
     @FXML
     private HBox dashboard;
-    
+
     @FXML
     private HBox dictionary;
 
@@ -27,14 +28,26 @@ public class MainController {
     private HBox game;
 
     @FXML
+    private HBox translate;
+
+    @FXML
+    private HBox thesaurus;
+
+    @FXML
     private ScrollPane displayArea;
+
+    private HBox currentSelectedItem;
 
     @FXML
     private void initialize() {
         dashboard.setOnMouseClicked(this::handleDashboardClick);
         dictionary.setOnMouseClicked(this::handleDictionaryClick);
         game.setOnMouseClicked(this::handleGameClick);
+        thesaurus.setOnMouseClicked(this::handleThesaurusClick);
+
         loadContent("DashboardView.fxml");
+        this.currentSelectedItem = this.dashboard;
+        dashboard.getStyleClass().add("selected");
     }
 
     private void loadContent(String fxmlFile) {
@@ -48,18 +61,43 @@ public class MainController {
         }
     }
 
+    private void handleSidebarClick(HBox clickedItem) {
+        if (currentSelectedItem != null) {
+            currentSelectedItem.getStyleClass().remove("selected");
+        }
+
+        clickedItem.getStyleClass().add("selected");
+
+        currentSelectedItem = clickedItem;
+    }
+
     @FXML
     private void handleDashboardClick(MouseEvent event) {
+        handleSidebarClick(dashboard);
         loadContent("DashboardView.fxml");
     }
 
     @FXML
     private void handleDictionaryClick(MouseEvent event) {
+        handleSidebarClick(dictionary);
         loadContent("DictionaryView.fxml");
     }
 
     @FXML
     private void handleGameClick(MouseEvent event) {
-        loadContent("DashboardView.fxml");
+        handleSidebarClick(game);
+        loadContent("GameView.fxml");
     }
+
+    @FXML
+    private void handleThesaurusClick(MouseEvent event) {
+        handleSidebarClick(thesaurus);
+        loadContent("ThesaurusView.fxml");
+    }
+
+    // @FXML
+    // private void handleTranslateClick(MouseEvent event) {
+    //     handleSidebarClick(translate);
+    //     loadContent("TranslateView.fxml");
+    // }
 }

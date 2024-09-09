@@ -40,7 +40,7 @@
                 <Insets left="10"/>
             </padding> 
             <ImageView fitHeight="35" fitWidth="35" preserveRatio="true">
-                <Image url="@images/profile-icon.png"/> 
+                <Image url="@images/dictionary.png"/> 
             </ImageView>
             <Label styleClass = "sidebar-item-content" text = "Dictionary"/>
         </HBox>
@@ -52,6 +52,24 @@
                 <Image url="@images/profile-icon.png"/> 
             </ImageView>
             <Label styleClass = "sidebar-item-content" text = "Game"/>
+        </HBox>
+        <HBox fx:id = "thesaurus" styleClass = "sidebar-item" alignment = "CENTER_LEFT" spacing = "10" onMouseClicked="#handleThesaurusClick">
+            <padding>
+                <Insets left="10"/>
+            </padding> 
+            <ImageView fitHeight="35" fitWidth="35" preserveRatio="true">
+                <Image url="@images/profile-icon.png"/> 
+            </ImageView>
+            <Label styleClass = "sidebar-item-content" text = "Thesaurus"/>
+        </HBox>
+        <HBox fx:id = "translate" styleClass = "sidebar-item" alignment = "CENTER_LEFT" spacing = "10" onMouseClicked="#handleDashboardClick">
+            <padding>
+                <Insets left="10"/>
+            </padding> 
+            <ImageView fitHeight="35" fitWidth="35" preserveRatio="true">
+                <Image url="@images/translate.png"/> 
+            </ImageView>
+            <Label styleClass = "sidebar-item-content" text = "Translate"/>
         </HBox>
     </VBox>
     <ScrollPane fx:id = "displayArea" styleClass = "dashboard" HBox.hgrow = "ALWAYS" fitToWidth="true">

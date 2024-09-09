@@ -7,6 +7,7 @@ controller\SidebarController.class
 controller\LoginController.class
 model\Type.class
 model\DBHelper.class
+controller\ThesaurusController.class
 controller\DictionaryController.class
 model\Meaning.class
 app\Projerk.class
