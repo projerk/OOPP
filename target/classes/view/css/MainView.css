@@ -14,7 +14,8 @@
 }
 
 .sidebar-item {
-    -fx-background-color: #148761;
+    /* -fx-background-color: #148761; */
+    -fx-background-color: transparent;
     -fx-text-fill: white;
     -fx-background-radius: 10;
     -fx-pref-width: 180px;  
@@ -23,6 +24,15 @@
     -fx-min-height: 30px;  
     -fx-max-width: 200px;   
     -fx-max-height: 200px; 
+}
+
+.sidebar-item:hover {
+    -fx-background-color: #148761;
+}
+
+.sidebar-item.selected {
+    -fx-background-color: #148761;
+
 }
 
 .dashboard {
