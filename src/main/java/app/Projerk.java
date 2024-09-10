@@ -8,10 +8,14 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.nio.file.Paths;
 import javafx.stage.Screen;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import javafx.geometry.Rectangle2D;
 
 
 public class Projerk extends Application {
+    private ExecutorService executor;
     private static Projerk instance;
     private Stage primaryStage;
     private Screen screen = Screen.getPrimary();
@@ -57,6 +61,30 @@ public class Projerk extends Application {
 
     public void setMaximized(boolean state) {
         primaryStage.setMaximized(state);
+    }
+
+    @Override
+    public void stop() {
+        shutdownExecutor();
+    }
+
+    private void shutdownExecutor() {
+        if (executor != null && !executor.isShutdown()) {
+            executor.shutdownNow(); 
+            try {
+                if (!executor.awaitTermination(60, java.util.concurrent.TimeUnit.SECONDS)) {
+                    System.out.println("Executor chưa dừng. Thực hiện shutdownNow...");
+                    executor.shutdownNow();
+                    if (!executor.awaitTermination(60, java.util.concurrent.TimeUnit.SECONDS)) {
+                        System.err.println("Executor không thể dừng đúng cách");
+                    }
+                }
+            } catch (InterruptedException ex) {
+                System.err.println("Ngắt quãng khi chờ Executor dừng");
+                executor.shutdownNow();
+                Thread.currentThread().interrupt(); 
+            }
+        }
     }
 
     public static void main(String[] args) {
