@@ -35,6 +35,8 @@
     -fx-font-size: 20px;
     -fx-background-color: transparent;
     -fx-min-height: 300px;
+    -fx-font-family: "Verdana";
+    -fx-text-fill: #e9e9ea;
 }
 
 .input-text:focused {

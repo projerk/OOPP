@@ -1,5 +1,8 @@
 package app;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import model.TranslateAPI;
 
 public class AppTask implements Callable<String> {
