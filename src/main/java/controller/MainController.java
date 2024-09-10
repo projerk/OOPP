@@ -101,7 +101,6 @@ public class MainController {
         handleSidebarClick(translate);
         loadContent("TranslateView.fxml");
     }
-
     // @FXML
     // private void handleTranslateClick(MouseEvent event) {
     //     handleSidebarClick(translate);
