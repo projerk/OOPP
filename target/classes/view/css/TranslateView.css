@@ -1,0 +1,50 @@
+.translate-container {
+    -fx-background-radius: 10;
+    -fx-background-color: #171b1d;
+}
+
+/* .translate-title-text {
+    -fx-font-size: 30px;
+    -fx-font-family: "Verdana";
+    -fx-text-fill: #e9e9ea;
+} */
+
+/* .textfield-button-container {
+    -fx-background-color: red;
+} */
+
+/* .translate-textfield {
+    -fx-background-radius: 12;
+    -fx-text-fill: gray;
+    -fx-background-color: transparent;
+    -fx-border-color: #148761;
+} */
+
+.input-text {
+    -fx-background-color: #171b1d;
+    -fx-control-inner-background: #171b1d; 
+    -fx-font-size: 20px;
+    -fx-border-color: #171b1d;
+    -fx-min-height: 300px;
+    -fx-prompt-text-fill: #bebec2;
+    -fx-font-family: "Verdana";
+    -fx-text-fill: #e9e9ea;
+}
+
+.output-text {
+    -fx-font-size: 20px;
+    -fx-background-color: transparent;
+    -fx-min-height: 300px;
+}
+
+.input-text:focused {
+    -fx-focus-color: transparent; 
+    -fx-faint-focus-color: transparent;  
+}
+
+.search-button {
+    -fx-background-color: #148761;
+    -fx-text-fill: #e9e9ea;
+    -fx-background-radius: 10;
+}
+
