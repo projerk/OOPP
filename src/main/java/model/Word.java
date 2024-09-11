@@ -35,4 +35,8 @@ public class Word {
     public Type getType(int idx) {
         return types.get(idx);
     }
+
+    public ArrayList<Type> getTypeArray() {
+        return types;
+    }
 }

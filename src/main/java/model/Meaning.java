@@ -25,4 +25,8 @@ public class Meaning {
     public Example getExample(int idx) {
         return examples.get(idx);
     }
+
+    public ArrayList<Example> getExampleArray() {
+        return examples;
+    }
 }

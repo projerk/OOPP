@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
-import java.util.Scanner;
+import java.time.Instant;
 
 public class TranslateAPI {
 
@@ -21,6 +21,7 @@ public class TranslateAPI {
         options.addArguments("--disable-gpu");
         options.addArguments("--log-level=3");
         String res = "";
+        long currentMillis = Instant.now().toEpochMilli();
         WebDriver driver = new ChromeDriver(options);
         String encodedTarget = URLEncoder.encode(target, StandardCharsets.UTF_8);
 
@@ -32,13 +33,14 @@ public class TranslateAPI {
             WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(
                     By.xpath("//*[@id=\"yDmH0d\"]/c-wiz/div/div[2]/c-wiz/div[2]/c-wiz/div[1]/div[2]/div[2]/c-wiz/div/div[6]/div/div[1]/span[1]/span/span")
             ));
-
             res = element.getText();
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {
             driver.quit();
+            long next = Instant.now().toEpochMilli();
+            System.out.println(next - currentMillis);
         }
 
         return res;

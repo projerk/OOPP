@@ -25,4 +25,8 @@ public class Type {
     public Meaning getMeaning(int idx) {
         return meanings.get(idx);
     }
+
+    public ArrayList<Meaning> getMeaningArray() {
+        return meanings;
+    }
 }
