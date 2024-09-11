@@ -13,7 +13,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.nio.file.Paths;
+import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import java.io.File;
 import org.json.JSONObject;
 import model.Person;
 import model.DBHelper;
@@ -21,7 +23,10 @@ import model.Word;
 import model.Type;
 import model.Meaning;
 import model.Example;
+import tts.Speaker;
 import java.util.ArrayList;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class DictionaryController {
     @FXML
@@ -34,7 +39,12 @@ public class DictionaryController {
     private VBox wordContent;
 
     @FXML
-    private VBox border;
+    private VBox border;    
+
+    @FXML
+    private HBox bookmarkVoice;
+
+    private Speaker speaker = Speaker.getInstance();
 
     @FXML
     private void initialize() {
@@ -47,23 +57,34 @@ public class DictionaryController {
 
         wordPhonetic.getChildren().clear();
         wordContent.getChildren().clear();
+        bookmarkVoice.getChildren().clear();
         border.setStyle("-fx-pref-height: 1px; -fx-background-color: #494d51;");
         JSONObject json = DBHelper.searchWord(target);
 
         if (json.has("word")) {
             Word word = parse(json);
             ArrayList<Type> types =  word.getTypeArray();
+            Button speechButton = new Button();
+            String path = Paths.get("src", "main", "resources","view","images","speaker.png").toAbsolutePath().toString();
+            File file = new File(path);
+            Image image = new Image(file.toURI().toString());
+            ImageView imageView = new ImageView(image);
+            imageView.setFitWidth(40);
+            imageView.setFitHeight(40);
+            speechButton.setGraphic(imageView);
+            speechButton.setStyle("-fx-background-color: transparent");
+            speechButton.setOnAction(event -> {speaker.speak(word.getWord());});
 
             Label wordText = new Label();
             Label phoneticText = new Label();
             wordText.setText(word.getWord());
             phoneticText.setText(word.getPhonetic());
-            wordText.setStyle("-fx-font-size: 20px; -fx-text-fill: #e9e9ea; -fx-font-family: 'Verdana'; ");
-            phoneticText.setStyle("-fx-font-size: 16px; -fx-text-fill: #bebec2; -fx-font-family: 'Verdana'; ");
+            wordText.setStyle("-fx-font-size: 22px; -fx-text-fill: #e9e9ea; -fx-font-family: 'Verdana'; ");
+            phoneticText.setStyle("-fx-font-size: 17px; -fx-text-fill: #bebec2; -fx-font-family: 'Verdana'; ");
 
+            bookmarkVoice.getChildren().add(speechButton);
             wordPhonetic.getChildren().add(wordText);
             wordPhonetic.getChildren().add(phoneticText);
-
             for(Type type : types) {
                 Label typeText = new Label();
                 typeText.setText(type.getType());
@@ -77,11 +98,11 @@ public class DictionaryController {
 
                     HBox meaningContainer = new HBox();
                     HBox coloredBlank = new HBox();
-                    coloredBlank.setStyle("-fx-backgound-color: #148761; -fx-pref-width: 20px");
+                    coloredBlank.setStyle("-fx-background-color: #148761; -fx-pref-width: 10px");
                     meaningContainer.setSpacing(10);
 
                     meaningText.setText(meaning.getMeaning());
-                    meaningText.setStyle("-fx-font-family: 'Verdana'; -fx-padding: 5px; -fx-text-fill: #e9e9ea; -fx-font-size: 12px;");
+                    meaningText.setStyle("-fx-font-family: 'Verdana'; -fx-padding: 5px; -fx-text-fill: #e9e9ea; -fx-font-size: 15px;");
                     meaningContainer.getChildren().add(coloredBlank);
                     meaningContainer.getChildren().add(meaningText);
                     wordContent.getChildren().add(meaningContainer);
@@ -91,11 +112,27 @@ public class DictionaryController {
                     for (Example example : examples) {
                         Label exampleTextEnglish = new Label();
                         Label exampleTextVietnamese = new Label();
+                        HBox exampleEnglishContainer = new HBox();
+                        HBox exampleVietnameseContainer = new HBox();
+                        HBox transparentBlank1 = new HBox();
+                        HBox transparentBlank2 = new HBox();
+                        transparentBlank1.setStyle("-fx-pref-width: 30px;");
+                        transparentBlank2.setStyle("-fx-pref-width: 30px;");
+
+                        exampleEnglishContainer.getChildren().add(transparentBlank1);
+                        exampleVietnameseContainer.getChildren().add(transparentBlank2);
+
                         exampleTextEnglish.setText(example.getEnglishPart());
                         exampleTextVietnamese.setText(example.getVietnamesePart());
 
-                        wordContent.getChildren().add(exampleTextEnglish);
-                        wordContent.getChildren().add(exampleTextVietnamese);
+                        exampleTextVietnamese.setStyle("-fx-font-size: 12px; -fx-text-fill: #bebec2; -fx-font-family: 'Verdana';");
+                        exampleTextEnglish.setStyle("-fx-font-size: 12px; -fx-text-fill: #e9e9ea; -fx-font-family: 'Verdana';");
+
+                        exampleEnglishContainer.getChildren().add(exampleTextEnglish);
+                        exampleVietnameseContainer.getChildren().add(exampleTextVietnamese);
+
+                        wordContent.getChildren().add(exampleEnglishContainer);
+                        wordContent.getChildren().add(exampleVietnameseContainer);
                     }
                 }
             }

@@ -37,17 +37,17 @@
             <padding>
                 <Insets top="10" right="10" bottom="10" left="10"/>
             </padding>
-            <HBox fx:id = "wordPhonetic" styleClass = "word-phonetic-container" spacing = "20" HBox.hgrow = "ALWAYS">
+            <HBox fx:id = "wordPhonetic" styleClass = "word-phonetic-container" spacing = "20" HBox.hgrow = "ALWAYS" alignment = "CENTER_LEFT">
 
             </HBox>
-            <HBox styleClass = "bookmark-voice-container" spacing = "20" HBox.hgrow = "ALWAYS">
+            <HBox fx:id = "bookmarkVoice" styleClass = "bookmark-voice-container" spacing = "20" HBox.hgrow = "ALWAYS" alignment = "CENTER_RIGHT">
             
             </HBox>
         </HBox>
 
         <VBox fx:id = "border"></VBox>
 
-        <VBox fx:id = "wordContent" styleClass = "meaning-type-example-container" spacing = "20" HBox.hgrow = "ALWAYS">
+        <VBox fx:id = "wordContent" styleClass = "meaning-type-example-container" spacing = "10" HBox.hgrow = "ALWAYS">
             <padding>
                 <Insets top="10" right="10" bottom="10" left="10"/>
             </padding>
