@@ -20,7 +20,7 @@ public class DBHelper {
     }
 
     public static Connection connect() throws SQLException {
-        String url = "jdbc:sqlite:C:/Users/duong/Desktop/OOPP/database.db";
+        String url = "jdbc:sqlite:D:/OOP/OOPP/database.db";
         return DriverManager.getConnection(url);
     }
 
