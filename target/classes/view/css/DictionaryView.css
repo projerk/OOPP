@@ -1,0 +1,27 @@
+.dictionary-container {
+    -fx-background-radius: 10;
+    -fx-background-color: #171b1d;
+}
+
+.dictionary-title-text {
+    -fx-font-size: 30px;
+    -fx-font-family: "Verdana";
+    -fx-text-fill: #e9e9ea;
+}
+
+/* .textfield-button-container {
+    -fx-background-color: red;
+} */
+
+.dictionary-textfield {
+    -fx-background-radius: 12;
+    -fx-text-fill: gray;
+    /* -fx-background-color: transparent; */
+    -fx-boarder-color: #148761;
+}
+
+.dictionary-search-button {
+    -fx-background-color: #148761;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+}

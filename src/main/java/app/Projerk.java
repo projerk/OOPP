@@ -21,6 +21,7 @@ public class Projerk extends Application {
     private Screen screen = Screen.getPrimary();
     private double screenWidth;
     private double screenHeight;
+    private Scene scene;
     Rectangle2D bounds = screen.getVisualBounds();
     public Projerk() {}
 
@@ -45,8 +46,8 @@ public class Projerk extends Application {
             String fxmlPath = Paths.get("src", "main", "resources", "view", fxmlFile).toAbsolutePath().toString();
             FXMLLoader loader = new FXMLLoader(Paths.get(fxmlPath).toUri().toURL());
             Parent root = loader.load();
-            Scene scene = new Scene(root, screenWidth, screenHeight);
-            primaryStage.setScene(scene);
+            this.scene = new Scene(root, screenWidth, screenHeight);
+            primaryStage.setScene(this.scene);
             setMaximized(true);
             primaryStage.show();
         } catch (IOException e) {
@@ -85,6 +86,10 @@ public class Projerk extends Application {
                 Thread.currentThread().interrupt(); 
             }
         }
+    }
+
+    public Scene getScene() {
+        return this.scene;
     }
 
     public static void main(String[] args) {

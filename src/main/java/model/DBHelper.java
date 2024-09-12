@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import org.json.JSONObject;
+import java.nio.file.Paths;
+
 
 public class DBHelper {
 
@@ -20,7 +22,8 @@ public class DBHelper {
     }
 
     public static Connection connect() throws SQLException {
-        String url = "jdbc:sqlite:C:/Users/duong/Desktop/OOPP/database.db";
+        String dbPath = Paths.get("database.db").toAbsolutePath().toString();
+        String url = "jdbc:sqlite:" + dbPath;
         return DriverManager.getConnection(url);
     }
 

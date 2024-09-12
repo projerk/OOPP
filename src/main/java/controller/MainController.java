@@ -106,7 +106,7 @@ public class MainController {
     @FXML
     private void handleGameClick(MouseEvent event) {
         handleSidebarClick(game);
-        loadContent("Test.fxml");
+        loadContent("GameView.fxml");
     }
     // @FXML
     // private void handleTranslateClick(MouseEvent event) {

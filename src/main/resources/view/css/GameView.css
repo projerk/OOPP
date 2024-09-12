@@ -1,0 +1,8 @@
+.cc {
+    -fx-pref-width: 300px;
+    -fx-pref-height: 400px;
+}
+
+.cl {
+    -fx-background-color: red;
+}
