@@ -69,8 +69,8 @@ public class DictionaryController {
             File file = new File(path);
             Image image = new Image(file.toURI().toString());
             ImageView imageView = new ImageView(image);
-            imageView.setFitWidth(40);
-            imageView.setFitHeight(40);
+            imageView.setFitWidth(30);
+            imageView.setFitHeight(30);
             speechButton.setGraphic(imageView);
             speechButton.setStyle("-fx-background-color: transparent");
             speechButton.setOnAction(event -> {speaker.speak(word.getWord());});
@@ -116,8 +116,8 @@ public class DictionaryController {
                         HBox exampleVietnameseContainer = new HBox();
                         HBox transparentBlank1 = new HBox();
                         HBox transparentBlank2 = new HBox();
-                        transparentBlank1.setStyle("-fx-pref-width: 30px;");
-                        transparentBlank2.setStyle("-fx-pref-width: 30px;");
+                        transparentBlank1.setStyle("-fx-pref-width: 35px;");
+                        transparentBlank2.setStyle("-fx-pref-width: 35px;");
 
                         exampleEnglishContainer.getChildren().add(transparentBlank1);
                         exampleVietnameseContainer.getChildren().add(transparentBlank2);
@@ -155,6 +155,9 @@ public class DictionaryController {
             if (line.startsWith("*")) {
                 String res = extractType(line);
                 Type type = new Type();
+                if (res.equals("�ộng từ")) {
+                    res = "động từ";
+                }
                 type.setType(res);
                 currType = type;
                 currWord.addType(type);

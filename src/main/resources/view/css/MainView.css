@@ -52,3 +52,8 @@
     -fx-pref-width: 0; 
     -fx-pref-height: 0; 
 }
+
+.canvas {
+    -fx-pref-width: 500px;
+    -fx-pref-height: 500px;
+}

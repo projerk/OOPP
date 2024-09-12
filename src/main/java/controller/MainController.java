@@ -45,6 +45,7 @@ public class MainController {
         game.setOnMouseClicked(this::handleGameClick);
         thesaurus.setOnMouseClicked(this::handleThesaurusClick);
         translate.setOnMouseClicked(this::handleTranslateClick);
+        game.setOnMouseClicked(this::handleGameClick);
 
         loadContent("DashboardView.fxml");
         this.currentSelectedItem = this.dashboard;
@@ -84,11 +85,11 @@ public class MainController {
         loadContent("DictionaryView.fxml");
     }
 
-    @FXML
-    private void handleGameClick(MouseEvent event) {
-        handleSidebarClick(game);
-        loadContent("GameView.fxml");
-    }
+    // @FXML
+    // private void handleGameClick(MouseEvent event) {
+    //     handleSidebarClick(game);
+    //     loadContent("GameView.fxml");
+    // }
 
     @FXML
     private void handleThesaurusClick(MouseEvent event) {
@@ -100,6 +101,12 @@ public class MainController {
     private void handleTranslateClick(MouseEvent event) {
         handleSidebarClick(translate);
         loadContent("TranslateView.fxml");
+    }
+
+    @FXML
+    private void handleGameClick(MouseEvent event) {
+        handleSidebarClick(game);
+        loadContent("Test.fxml");
     }
     // @FXML
     // private void handleTranslateClick(MouseEvent event) {
