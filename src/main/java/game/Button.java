@@ -7,15 +7,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.text.Font;
 
-public abstract class Button extends Object implements IButton {
-
-    boolean active;
-    private double arcWidth;
-    private double arcHeight;
-    private String text;
-    private Color backgroundColor;
-    // private Color strokeColor;
-    private Font font;
+public abstract class Button extends Label implements IButton {
+    private Listener listener;
 
     public Button(double x, double y, double w, double h) {
         super(x,y,w,h);
@@ -39,52 +32,15 @@ public abstract class Button extends Object implements IButton {
                 handleMouseReleased();
                 break;
             default:
-                System.out.println("Unhandled mouse event: " + event.getEventType());
+                System.out.println("Unhandled mouse event: " + mouseEvent.getEventType());
         }
     }
 
-    public void render(GraphicsContext gc) {
-        gc.setFill(Constants.BUTTON_COLOR);
-        gc.fillRoundRect(getX(), getY(), getWidth(), getHeight(), getArcWidth(), getArcHeight());
+    public void setListener(Listener listener) {
+        this.listener = listener;
     }
 
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public void setArcWidth(double arcWidth) {
-        this.arcWidth = arcWidth;
-    }
-
-    public void setArcHeight(double arcHeight) {
-        this.arcHeight = arcHeight;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
-    }
-
-    public String getContent() {
-        return this.content;
-    }
-
-    public double getArcWidth() {
-        return this.arcWidth;
-    }
-
-    public double getArcHeight() {
-        return this.height;
-    }
-
-    public Color getColor() {
-        return this.color;
-    }
-
-    public void setFont(String fontName, int fontSize) {
-        this.font = new Font(fontName, fontSize);
-    }
-
-    public Font getFont() {
-        return font;
+    public Listener getListener() {
+        return this.listener;
     }
 }

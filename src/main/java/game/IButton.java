@@ -5,8 +5,8 @@ import javafx.scene.input.MouseEvent;
 
 
 public interface IButton {
-    public void handleMouseEvent(MouseEvent mouseEvent);
-    public void handleMouseHover();
-    public void handleMousePressed();
-    public void handleMouseReleased();
+    void handleMouseEvent(MouseEvent mouseEvent);
+    void handleMouseHover();
+    void handleMousePressed();
+    void handleMouseReleased();
 }

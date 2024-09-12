@@ -4,7 +4,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 
-public abstract class StaticObject implements IObject {
+public abstract class Object implements IObject {
 
     private double x;
     private double y;
