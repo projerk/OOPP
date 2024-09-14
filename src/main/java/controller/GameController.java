@@ -6,15 +6,23 @@ import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.Scene;
+import game.wordle.KeyboardButton;
+import game.wordle.Constant;
 
 public class GameController {
     @FXML
+    private VBox canvasContainer;
     private Canvas gameCanvas;
 
     private Projerk app;
     private Scene scene;
+    private double canvasWidth;
+    private double canvasHeight;
+
+    private KeyboardButton test;
 
     private double playerX = 100;
     private double playerY = 100;
@@ -57,11 +65,30 @@ public class GameController {
 
         gc.setFill(Color.BLUE);
         gc.fillOval(playerX, playerY, 30, 30);
+        test.render(gc);
     }
 
     private void init() {
         app = Projerk.getInstance();
         scene = app.getScene();
+        canvasWidth = scene.getWidth() - 20 - 20 - 180 - 20 - 10;
+        canvasHeight = scene.getHeight() - 40 - 10;
+        gameCanvas = new Canvas(canvasWidth, canvasHeight);
+        canvasContainer.getChildren().add(gameCanvas);
+
+
+        test = new KeyboardButton(100, 100, 43.59, 58);
+        test.setArcWidth(4);
+        test.setArcHeight(4);
+        test.setText("A");
+        test.setTextColor(Constant.CHARACTER_COLOR);
+        test.setBackgroundColor(Constant.COLOR_CORRECT);
+        test.setFont("Arial", 58 * 0.34482);
+        test.setStrokeColor(Constant.BORDER_COLOR);
+        test.setStrokeWidth(0);
+        test.setActive(true);
+        test.setHasStroke(false);
+
     }
 
     private void handlePlayerInput() {

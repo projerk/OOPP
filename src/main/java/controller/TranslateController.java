@@ -3,13 +3,10 @@ package controller;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.control.TextArea;
-import javafx.concurrent.Task;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-import model.Person;
 import app.AppTask;
 
 public class TranslateController {

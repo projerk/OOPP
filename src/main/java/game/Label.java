@@ -18,6 +18,9 @@ public abstract class Label extends Object {
     private Color textColor;
     private double strokeWidth;
     private Font font;
+    private double fontSize;
+    private String fontName;
+    private boolean hasStroke;
 
     public Label(double x, double y, double w, double h) {
         super(x,y,w,h);
@@ -25,12 +28,17 @@ public abstract class Label extends Object {
 
     @Override
     public void render(GraphicsContext gc) {
-        gc.setFill(backgroundColor);
-        gc.fillRoundRect(getX(), getY(), getWidth(), getHeight(), getArcWidth(), getArcHeight());
+        gc.save();
+        gc.scale(2,2);
 
-        gc.setStroke(strokeColor);
-        gc.setLineWidth(strokeWidth);
-        gc.strokeRoundRect(getX(), getY(), getWidth(), getHeight(), getArcWidth(), getArcHeight());
+        gc.setFill(backgroundColor);
+        gc.fillRoundRect(getX(), getY(), getWidth() / 2, getHeight() / 2, getArcWidth(), getArcHeight());
+
+        if (hasStroke) {
+            gc.setStroke(strokeColor);
+            gc.setLineWidth(strokeWidth);
+            gc.strokeRoundRect(getX(), getY(), getWidth() / 2, getHeight() / 2, getArcWidth(), getArcHeight());
+        }
 
         gc.setFill(textColor);
         gc.setFont(font);
@@ -41,10 +49,11 @@ public abstract class Label extends Object {
         double textWidth = tempText.getLayoutBounds().getWidth();
         double textHeight = tempText.getLayoutBounds().getHeight();
 
-        double textX = getX() + (getWidth() - textWidth) / 2;
-        double textY = getY() + (getHeight() + textHeight) / 2 - 5; 
+        double textX = getX() + (getWidth() / 2 - textWidth) / 2;
+        double textY = getY() + (getHeight() / 2 + textHeight) / 2; 
 
         gc.fillText(text, textX, textY);
+        gc.restore();
     }
 
     public void setText(String text) {
@@ -79,8 +88,8 @@ public abstract class Label extends Object {
         return this.backgroundColor;
     }
 
-    public void setFont(String fontName, int fontSize) {
-        this.font = new Font(fontName, fontSize);
+    public void setFont(String fontName, double fontSize) {
+        this.font = new Font(fontName, fontSize / 2);
     }
 
     public Font getFont() {
@@ -113,5 +122,29 @@ public abstract class Label extends Object {
 
     public Color getTextColor() {
         return this.textColor;
+    }
+
+    public void setFontName(String fontName) {
+        this.fontName = fontName;
+    }
+
+    public String getFontName() {
+        return fontName;
+    }
+
+    public void setFontSize(double fontSize) {
+        this.fontSize = fontSize;
+    }
+
+    public double getFontSize() {
+        return fontSize;
+    }
+
+    public boolean isHasStroke() {
+        return hasStroke;
+    }
+
+    public void setHasStroke(boolean hasStroke) {
+        this.hasStroke = hasStroke;
     }
 }

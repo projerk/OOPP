@@ -19,6 +19,6 @@
 <?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.canvas.GraphicsContext?>
 
-<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" spacing="20" stylesheets="@css/GameView.css" fx:controller="controller.GameController">
-    <Canvas fx:id="gameCanvas" width="800" height="600" />
+<VBox styleClass = "canvas-container" fx:id = "canvasContainer" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" HBox.hgrow = "ALWAYS" VBox.vgrow = "ALWAYS" alignment="CENTER" stylesheets="@css/GameView.css" fx:controller="controller.GameController">
+    
 </VBox>

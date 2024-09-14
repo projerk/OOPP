@@ -1,13 +1,7 @@
 package controller;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.RotateTransition;
-import javafx.animation.Timeline;
+
 import javafx.fxml.FXML;
-import javafx.scene.layout.StackPane;
-import javafx.scene.transform.Rotate;
-import javafx.util.Duration;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import model.Authorization;

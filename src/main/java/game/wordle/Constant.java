@@ -1,11 +1,5 @@
 package game.wordle;
-
-import javafx.scene.input.MouseEvent;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
-import javafx.scene.text.Font;
 
 public class Constant {
     public enum State {
@@ -24,13 +18,14 @@ public class Constant {
     public static final Color BORDER_COLOR = Color.web("#565758");
     public static final int ROWS = 6;
     public static final int COLS = 5;
-    public static final double BOX_WIDTH = 100;
-    public static final double BOX_HEIGHT = 100;
-    public static final int FONT_SIZE = 15;
+    public static final double BOX_WIDTH_RATIO = 0.1;
+    public static final double BOX_HEIGHT_RATIO = 0.1;
+    public static final double FONT_SIZE_RATIO = 0.6;
     public static final int NONE = 0;
     public static final String NONE_TEXT = "";
     public static final String FONT_NAME = "";
     public static final double STROKE_WIDTH = 1;
+    public static final double MARGIN_RATIO = 0.12;
 
     public static void doNothing() {
 

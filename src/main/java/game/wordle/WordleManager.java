@@ -47,28 +47,28 @@ public class WordleManager implements Listener {
 
     public void generateCharacterBox() {
         for (int i = 0; i < Constant.ROWS; i++) {
-            ArrayList<Label> tempbox;
+            ArrayList<Label> tempbox = new ArrayList<>();
             for (int j = 0; j < Constant.COLS; j++) {
-                boxs.add(generateBox(int x, int y));
+                tempbox.add(generateBox());
             }
             boxs.add(tempbox);
         }
     }
 
     private Label generateBox() {
-        Label box = new CharacterBox(Constant.NONE, Constant.NONE, Constant.BOX_WIDTH, Constant.BOX_HEIGHT);
+        Label box = new CharacterBox(Constant.NONE, Constant.NONE, Constant.BOX_WIDTH_RATIO * canvasHeight, Constant.BOX_HEIGHT_RATIO * canvasHeight);
         box.setArcWidth(Constant.NONE);
         box.setArcHeight(Constant.NONE);
         box.setText(Constant.NONE_TEXT);
         box.setBackgroundColor(Constant.COLOR_UNKNOWN);
-        box.setFont(Constant.FONT_NAME, Constant.FONT_SIZE);
+        box.setFont(Constant.FONT_NAME, Constant.FONT_SIZE_RATIO * Constant.BOX_WIDTH_RATIO * canvasHeight);
         box.setStrokeColor(Constant.BORDER_COLOR);
         box.setStrokeWidth(Constant.STROKE_WIDTH);
         box.setActive(false);
         return box;
     }
 
-    private void drawBackground() {
+    // private void drawBackground() {
 
-    }
+    // }
 }

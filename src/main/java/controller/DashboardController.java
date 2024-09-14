@@ -4,10 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import model.Authorization;
-import model.APIService;
 import app.Projerk;
 
 public class DashboardController {

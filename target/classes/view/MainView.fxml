@@ -18,7 +18,7 @@
 <?import javafx.scene.chart.XYChart?>
 
 <HBox styleClass = "container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@css/MainView.css"
-      fx:controller="controller.MainController" spacing="20" >
+      fx:controller="controller.MainController" spacing="20" VBox.vgrow = "ALWAYS" HBox.hgrow = "ALWAYS">
     <padding>
         <Insets top="20" right="10" bottom="20" left="10"/>
     </padding>
@@ -72,7 +72,9 @@
             <Label styleClass = "sidebar-item-content" text = "Translate"/>
         </HBox>
     </VBox>
-    <ScrollPane fx:id = "displayArea" styleClass = "dashboard" HBox.hgrow = "ALWAYS" fitToWidth="true">
+    <VBox styleClass = "display-area-container" fx:id = "displayAreaContainer" VBox.vgrow = "ALWAYS" HBox.hgrow = "ALWAYS">
+        <ScrollPane fx:id = "displayArea" styleClass = "dashboard" HBox.hgrow = "ALWAYS" fitToWidth="true">
         <!-- View add here -->
-    </ScrollPane>
+        </ScrollPane>
+    </VBox>
 </HBox>

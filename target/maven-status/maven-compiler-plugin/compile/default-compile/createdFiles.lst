@@ -4,7 +4,6 @@ game\wordle\KeyboardButton.class
 controller\GameController.class
 model\DBHelper.class
 game\IObject.class
-game\wordle\HiddenCharacter.class
 controller\ThesaurusController.class
 game\Object.class
 game\IButton.class
