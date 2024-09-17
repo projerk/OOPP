@@ -15,9 +15,16 @@
 
 .dictionary-textfield {
     -fx-background-radius: 12;
-    -fx-text-fill: gray;
-    /* -fx-background-color: transparent; */
-    -fx-boarder-color: #148761;
+    -fx-background-color: transparent;
+    -fx-border-color: #148761;
+    -fx-prompt-text-fill: #bebec2;
+    -fx-font-family: "Verdana";
+    -fx-text-fill: #e9e9ea;
+    -fx-control-inner-background: #171b1d; 
+    -fx-min-height: 70px;
+    -fx-min-width: 500px;
+    -fx-border-radius: 20px;
+    -fx-font-size: 25px;
 }
 
 .dictionary-search-button {

@@ -18,6 +18,16 @@ import tts.Speaker;
 import java.util.ArrayList;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import org.controlsfx.control.textfield.TextFields;
+import org.controlsfx.control.textfield.AutoCompletionBinding;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import model.Trie;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+
 
 public class DictionaryController {
     @FXML
@@ -37,9 +47,30 @@ public class DictionaryController {
 
     private Speaker speaker = Speaker.getInstance();
 
+    private Trie trie = Trie.getInstance();
+
     @FXML
     private void initialize() {
+        // Sử dụng mảng để chứa autoCompletionBinding
+        List<String> allSuggestions = new ArrayList<>();
+        AutoCompletionBinding<String>[] autoCompletionBinding = new AutoCompletionBinding[1];
+        autoCompletionBinding[0] = TextFields.bindAutoCompletion(word, allSuggestions);
 
+        word.textProperty().addListener((observable, oldValue, newValue) -> {
+            List<String> suggestions = trie.getTopWordsWithPrefix(newValue);
+
+            List<String> filteredSuggestions = suggestions.stream()
+                    .filter(item -> item.toLowerCase().startsWith(newValue.toLowerCase()))
+                    .collect(Collectors.toList());
+
+            for (String suggestion : filteredSuggestions) {
+                System.out.println(suggestion);
+            }
+
+            autoCompletionBinding[0].dispose();  
+            autoCompletionBinding[0] = TextFields.bindAutoCompletion(word, filteredSuggestions);
+            autoCompletionBinding[0].setUserInput(newValue);  
+        });
     }
 
     @FXML

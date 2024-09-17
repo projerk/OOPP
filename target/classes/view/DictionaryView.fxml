@@ -24,7 +24,7 @@
             <padding>
                 <Insets top="20" right="20" bottom="20" left="20"/>
             </padding>
-            <TextField styleClass = "dictionary-textfield" fx:id = "word"/>
+            <TextField promptText = "Write something ..." styleClass = "dictionary-textfield" fx:id = "word"/>
             <Button styleClass = "dictionary-search-button" onAction="#handleSearchButton" text = "Search"/>
         </HBox>
     </VBox>

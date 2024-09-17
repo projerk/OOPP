@@ -9,9 +9,8 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import javafx.stage.Screen;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 import javafx.geometry.Rectangle2D;
+import model.TrieLoader;
 
 
 public class Projerk extends Application {
@@ -31,6 +30,7 @@ public class Projerk extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+        TrieLoader.loadTrie();
         System.out.println(System.getProperty("java.class.path"));
         instance = this;
         screenWidth = bounds.getWidth();

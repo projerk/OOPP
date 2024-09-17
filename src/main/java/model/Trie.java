@@ -25,7 +25,7 @@ public class Trie {
         return instance;
     }
 
-    public void insert(String word) {
+    public void insert(String word, int wordId) {
         TrieNode node = root;
         for (char c : word.toCharArray()) {
             if (!node.containsKey(c)) {
@@ -34,6 +34,7 @@ public class Trie {
             node = node.get(c);
         }
         node.setEndOfWord(true);
+        node.setWordId(wordId);  
     }
 
     public boolean search(String word) {
@@ -50,6 +51,15 @@ public class Trie {
         return words;
     }
 
+    public List<String> getTopWordsWithPrefix(String prefix) {
+        List<String> topWords = new ArrayList<>();
+        TrieNode node = searchNode(prefix);
+        if (node != null) {
+            collectTopWords(node, new StringBuilder(prefix), topWords, 10);  // Giới hạn 10 từ
+        }
+        return topWords;
+    }
+
     private TrieNode searchNode(String word) {
         TrieNode node = root;
         for (char c : word.toCharArray()) {
@@ -64,11 +74,28 @@ public class Trie {
 
     private void collectWords(TrieNode node, StringBuilder prefix, List<String> words) {
         if (node.isEndOfWord()) {
-            words.add(prefix.toString());
+            words.add(prefix.toString() + " (ID: " + node.getWordId() + ")"); 
         }
         for (char c : node.getChildren().keySet()) {
             prefix.append(c);
             collectWords(node.get(c), prefix, words);
+            prefix.deleteCharAt(prefix.length() - 1);
+        }
+    }
+
+    private void collectTopWords(TrieNode node, StringBuilder prefix, List<String> words, int limit) {
+        if (words.size() >= limit) {
+            return; 
+        }
+        if (node.isEndOfWord()) {
+            words.add(prefix.toString()); 
+        }
+        for (char c : node.getChildren().keySet()) {
+            if (words.size() >= limit) {
+                break; 
+            }
+            prefix.append(c);
+            collectTopWords(node.get(c), prefix, words, limit);
             prefix.deleteCharAt(prefix.length() - 1);
         }
     }
