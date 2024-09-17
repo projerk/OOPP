@@ -1,0 +1,17 @@
+.auto-complete-popup {
+    -fx-background-color: #f0f0f0;
+    -fx-border-color: #333; 
+    -fx-border-radius: 10; 
+    -fx-background-radius: 10;
+}
+
+.auto-complete-row {
+    -fx-background-color: #ffffff; 
+    -fx-text-fill: #000000; 
+    -fx-padding: 5 10; 
+}
+
+.auto-complete-row:hover {
+    -fx-background-color: #ddd;
+    -fx-text-fill: #000;
+}

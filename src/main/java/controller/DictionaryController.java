@@ -6,6 +6,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.HBox;
 import java.nio.file.Paths;
+
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import java.io.File;
 import org.json.JSONObject;
@@ -27,6 +29,9 @@ import java.util.stream.Collectors;
 import model.Trie;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import app.Projerk;
+import java.nio.file.Paths;
+
 
 
 public class DictionaryController {
@@ -49,9 +54,10 @@ public class DictionaryController {
 
     private Trie trie = Trie.getInstance();
 
+    private Projerk app = Projerk.getInstance();
+
     @FXML
     private void initialize() {
-        // Sử dụng mảng để chứa autoCompletionBinding
         List<String> allSuggestions = new ArrayList<>();
         AutoCompletionBinding<String>[] autoCompletionBinding = new AutoCompletionBinding[1];
         autoCompletionBinding[0] = TextFields.bindAutoCompletion(word, allSuggestions);
@@ -71,6 +77,11 @@ public class DictionaryController {
             autoCompletionBinding[0] = TextFields.bindAutoCompletion(word, filteredSuggestions);
             autoCompletionBinding[0].setUserInput(newValue);  
         });
+        Scene scene = app.getScene();
+
+        String cssPath = Paths.get("src", "main", "resources", "view", "css", "AutoCompleteSearch.css").toAbsolutePath().toString();
+        
+        scene.getStylesheets().add("file:" + cssPath);
     }
 
     @FXML
