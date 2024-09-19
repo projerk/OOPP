@@ -174,6 +174,14 @@ public class DictionaryController {
         }
     }
 
+    /**
+     * This function is used to parse the data from meaning in database,
+     * as the types, meanings and examples are not separate.
+     * 
+     * @param target A json object contain 3 key: word, phonetic and meanings
+     * @return An instance of Word, which contain data of word, phonetic,
+     * list of types, list of meanings, and list of examples.
+     */
     private Word parse(JSONObject target) {
         Word word = new Word();
         word.setWord(target.getString("word"));

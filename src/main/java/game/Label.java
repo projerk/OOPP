@@ -22,10 +22,33 @@ public abstract class Label extends Object {
     private String fontName;
     private boolean hasStroke;
 
+
+    /**
+     * Constructor of label.
+     * use this element to display text, colorful graphic.
+     * at this moment, we do not support display iamge.
+     * 
+     * @param x x offset of label
+     * @param y y offset of label
+     * @param w width of label(px)
+     * @param h height of label(px)
+     * 
+     * remember that the (0,0) coordinator is on the top left of the screen
+     * not the center of the screen.
+     */
     public Label(double x, double y, double w, double h) {
         super(x,y,w,h);
     }
 
+    /**
+     * This function is used to render the label.
+     * 
+     * In this function, we have to use the gc.scale() in order to enhance
+     * the quality of graphic, so that width, height and text size will be
+     * divided by 2.
+     * 
+     * 
+     */
     @Override
     public void render(GraphicsContext gc) {
         gc.save();

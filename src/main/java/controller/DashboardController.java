@@ -19,6 +19,11 @@ public class DashboardController {
         drawChart();
     }
 
+    /**
+     * Draw chart on the dashboard
+     * 
+     * TO DO: add api to fetch the process of user, and draw them.
+     */
     private void drawChart() {
         NumberAxis xAxis = new NumberAxis();
         NumberAxis yAxis = new NumberAxis();

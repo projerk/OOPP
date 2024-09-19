@@ -8,7 +8,9 @@ C:\Users\duong\Desktop\OOPP\OOPP\src\main\java\controller\MainController.java
 C:\Users\duong\Desktop\OOPP\OOPP\src\main\java\controller\ThesaurusController.java
 C:\Users\duong\Desktop\OOPP\OOPP\src\main\java\controller\TranslateController.java
 C:\Users\duong\Desktop\OOPP\OOPP\src\main\java\game\Button.java
+C:\Users\duong\Desktop\OOPP\OOPP\src\main\java\game\Container.java
 C:\Users\duong\Desktop\OOPP\OOPP\src\main\java\game\IButton.java
+C:\Users\duong\Desktop\OOPP\OOPP\src\main\java\game\IContainer.java
 C:\Users\duong\Desktop\OOPP\OOPP\src\main\java\game\IObject.java
 C:\Users\duong\Desktop\OOPP\OOPP\src\main\java\game\Label.java
 C:\Users\duong\Desktop\OOPP\OOPP\src\main\java\game\Listener.java
