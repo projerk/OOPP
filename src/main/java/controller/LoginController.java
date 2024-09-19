@@ -46,9 +46,7 @@ public class LoginController {
         else {
             response = "Please ensure your password is longer than 6 characters";
         }
-        if (status == 200) {
-            app.changeScene("MainView.fxml", 10000, 10000);
-            app.setMaximized(true);
-        }
+        app.changeScene("MainView.fxml", 10000, 10000);
+        app.setMaximized(true);
     }
 }

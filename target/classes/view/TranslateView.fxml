@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.PasswordField?>
@@ -31,17 +32,21 @@
         <Button styleClass = "search-button" onAction = "#handleSearchButton" text = "Search"/>
     </HBox>
 
-    <VBox styleClass = "translate-container" HBox.hgrow = "ALWAYS">
+    <VBox styleClass = "translate-container" HBox.hgrow = "ALWAYS" spacing = "10">
         <padding>
             <Insets top="20" right="20" bottom="20" left="20"/>
         </padding>
+        <ComboBox styleClass = "combo-box-input" fx:id = "comboBoxInput"/>
+        <VBox styleClass = "horizontal-border" HBox.hgrow = "ALWAYS"/>
         <TextArea styleClass = "input-text" fx:id = "inputText" wrapText = "true" promptText="Write something..."/>
     </VBox>
 
-    <VBox styleClass = "translate-container" HBox.hgrow = "ALWAYS" alignment = "TOP_LEFT">
+    <VBox styleClass = "translate-container" HBox.hgrow = "ALWAYS" alignment = "TOP_LEFT" spacing = "10">
         <padding>
             <Insets top="20" right="20" bottom="20" left="20"/>
         </padding>
+        <ComboBox styleClass = "combo-box-output" fx:id = "comboBoxOutput"/>
+        <VBox styleClass = "horizontal-border" HBox.hgrow = "ALWAYS"/>
         <Label styleClass = "output-text" fx:id = "outputText" wrapText = "true"/>
     </VBox>
 </VBox>

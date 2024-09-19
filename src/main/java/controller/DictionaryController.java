@@ -22,16 +22,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import org.controlsfx.control.textfield.TextFields;
 import org.controlsfx.control.textfield.AutoCompletionBinding;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.concurrent.atomic.AtomicReference;
 import model.Trie;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import app.Projerk;
-import java.nio.file.Paths;
-
 
 
 public class DictionaryController {
@@ -59,29 +53,23 @@ public class DictionaryController {
     @FXML
     private void initialize() {
         List<String> allSuggestions = new ArrayList<>();
-        AutoCompletionBinding<String>[] autoCompletionBinding = new AutoCompletionBinding[1];
-        autoCompletionBinding[0] = TextFields.bindAutoCompletion(word, allSuggestions);
+        AtomicReference<AutoCompletionBinding<String>> autoCompletionBinding = new AtomicReference<>(
+                TextFields.bindAutoCompletion(word, allSuggestions));
 
         word.textProperty().addListener((observable, oldValue, newValue) -> {
-            List<String> suggestions = trie.getTopWordsWithPrefix(newValue);
-
-            List<String> filteredSuggestions = suggestions.stream()
-                    .filter(item -> item.toLowerCase().startsWith(newValue.toLowerCase()))
-                    .collect(Collectors.toList());
-
-            for (String suggestion : filteredSuggestions) {
-                System.out.println(suggestion);
+            if (newValue.isEmpty()) {
+                autoCompletionBinding.get().dispose(); 
+                autoCompletionBinding.set(TextFields.bindAutoCompletion(word, new ArrayList<>()));  
+            } else {
+                autoCompletionBinding.get().dispose();
+                List<String> suggestions = new ArrayList<>();
+                autoCompletionBinding.set(TextFields.bindAutoCompletion(word, suggestions));
+                suggestions = trie.getTopWordsWithPrefix(newValue);
+            
+                autoCompletionBinding.set(TextFields.bindAutoCompletion(word, suggestions));  // Tạo binding mới với danh sách gợi ý đã lọc
+                autoCompletionBinding.get().setUserInput(newValue); 
             }
-
-            autoCompletionBinding[0].dispose();  
-            autoCompletionBinding[0] = TextFields.bindAutoCompletion(word, filteredSuggestions);
-            autoCompletionBinding[0].setUserInput(newValue);  
         });
-        Scene scene = app.getScene();
-
-        String cssPath = Paths.get("src", "main", "resources", "view", "css", "AutoCompleteSearch.css").toAbsolutePath().toString();
-        
-        scene.getStylesheets().add("file:" + cssPath);
     }
 
     @FXML
@@ -97,16 +85,26 @@ public class DictionaryController {
         if (json.has("word")) {
             Word word = parse(json);
             ArrayList<Type> types =  word.getTypeArray();
-            Button speechButton = new Button();
+            Button speechButtonUK = new Button();
+            Button speechButtonUS = new Button();
             String path = Paths.get("src", "main", "resources","view","images","speaker.png").toAbsolutePath().toString();
             File file = new File(path);
             Image image = new Image(file.toURI().toString());
-            ImageView imageView = new ImageView(image);
-            imageView.setFitWidth(30);
-            imageView.setFitHeight(30);
-            speechButton.setGraphic(imageView);
-            speechButton.setStyle("-fx-background-color: transparent");
-            speechButton.setOnAction(event -> {speaker.speak(word.getWord());});
+            ImageView imageViewUS = new ImageView(image);
+            ImageView imageViewUK = new ImageView(image);
+            imageViewUK.setFitWidth(30);
+            imageViewUK.setFitHeight(30);
+            speechButtonUK.setGraphic(imageViewUK);
+            speechButtonUK.setText("UK");
+            speechButtonUK.setStyle("-fx-background-color: transparent; -fx-text-fill: #e9e9ea; -fx-font-family: 'Verdana';");
+            speechButtonUK.setOnAction(event -> {speaker.speak(word.getWord());});
+            
+            imageViewUS.setFitWidth(30);
+            imageViewUS.setFitHeight(30);
+            speechButtonUS.setGraphic(imageViewUS);
+            speechButtonUS.setText("US");
+            speechButtonUS.setStyle("-fx-background-color: transparent; -fx-text-fill: #e9e9ea; -fx-font-family: 'Verdana';");
+            speechButtonUS.setOnAction(event -> {speaker.speak(word.getWord());});
 
             Label wordText = new Label();
             Label phoneticText = new Label();
@@ -115,7 +113,8 @@ public class DictionaryController {
             wordText.setStyle("-fx-font-size: 22px; -fx-text-fill: #e9e9ea; -fx-font-family: 'Verdana'; ");
             phoneticText.setStyle("-fx-font-size: 17px; -fx-text-fill: #bebec2; -fx-font-family: 'Verdana'; ");
 
-            bookmarkVoice.getChildren().add(speechButton);
+            bookmarkVoice.getChildren().add(speechButtonUK);
+            bookmarkVoice.getChildren().add(speechButtonUS);
             wordPhonetic.getChildren().add(wordText);
             wordPhonetic.getChildren().add(phoneticText);
             for(Type type : types) {

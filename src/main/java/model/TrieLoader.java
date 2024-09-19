@@ -19,7 +19,7 @@ public class TrieLoader {
             while (rs.next()) {
                 int wordId = rs.getInt("id");
                 String word = rs.getString("word");
-                trie.insert(word, wordId);  // Chèn từ và id vào trie
+                trie.insert(word, wordId);  
             }
         } catch (SQLException e) {
             e.printStackTrace();

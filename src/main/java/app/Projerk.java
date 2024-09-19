@@ -37,6 +37,8 @@ public class Projerk extends Application {
         screenHeight = bounds.getHeight();
         this.primaryStage = primaryStage;
         loadScene("LoginView.fxml", screenWidth, screenHeight);
+        String cssPath = Paths.get("src", "main", "resources", "view", "css", "AutoCompleteSearch.css").toAbsolutePath().toString();
+        scene.getStylesheets().add("file:" + cssPath);
         setMaximized(true);
     }
 

@@ -50,3 +50,21 @@
     -fx-background-radius: 10;
 }
 
+.horizontal-border {
+    -fx-pref-height: 1px;
+    -fx-background-color: #494d51;
+}
+
+.combo-box-input {
+    -fx-background-radius: 10px;
+    -fx-background-color: #4db693;
+    -fx-font-family: "Verdana";
+    -fx-text-fill: #e9e9ea;
+}
+
+.combo-box-output {
+    -fx-background-radius: 10px;
+    -fx-background-color: #4db693;
+    -fx-font-family: "Verdana";
+    -fx-text-fill: #e9e9ea;
+}
