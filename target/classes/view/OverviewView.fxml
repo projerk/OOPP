@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.XYChart?>
+
+
+<VBox styleClass = "scroll-pane-container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" HBox.hgrow = "ALWAYS" VBox.vgrow = "ALWAYS" alignment = "CENTER" spacing = "20" 
+        stylesheets="@css/DashboardView.css"
+      fx:controller="controller.DashboardController">
+
+    <VBox fx:id = "main_container">
+        <HBox fx:id = "section">
+            <VBox fx:id = "item">
+                <Label text = "CATALOGUING">
+
+                </Label>
+                <Label>
+
+                </Label>
+            </VBox>
+
+            <VBox fx:id = "item">
+                <Label text = "TECHNICAL">
+
+                </Label>
+                <Label>
+
+                </Label>
+            </VBox>
+            
+            <VBox fx:id = "item">
+                <Label text = "CIRCULATION">
+
+                </Label>
+                <Label>
+
+                </Label>
+            </VBox>
+
+            <VBox fx:id = "item">
+                <Label text = "SELF CIRCULATION">
+
+                </Label>
+                <Label>
+
+                </Label>
+            </VBox>
+        </HBox>
+        <HBox fx:id = "section">
+            <VBox fx:id = "item">
+                <Label text = "SEARCH">
+
+                </Label>
+                <Label>
+
+                </Label>
+            </VBox>
+
+            <VBox fx:id = "item">
+                <Label text = 'SERIALS'>
+
+                </Label>
+                <Label>
+
+                </Label>
+            </VBox>
+
+            <VBox fx:id = "item">
+                <Label text = "ACQUISITIONS">
+
+                </Label>
+                <Label>
+
+                </Label>
+            </VBox>
+
+            <VBox fx:id = "item">
+                <Label text = "INTERLIBRARY LOANS">
+
+                </Label>
+                <Label>
+
+                </Label>
+            </VBox>
+        </HBox>
+        <HBox fx:id = "section">
+            <VBox fx:id = "item">
+                <Label text = "MANAGEMENT">
+
+                </Label>
+                <Label>
+
+                </Label>
+            </VBox>
+
+            <VBox fx:id = "item">
+                <Label text = "SYSTEM">
+
+                </Label>
+                <Label>
+
+                </Label>
+            </VBox>
+        </HBox>
+    </VBox>
+</VBox>

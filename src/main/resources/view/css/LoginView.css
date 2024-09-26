@@ -32,10 +32,6 @@
     -fx-font-size: 60px;
 }
 
-/* .test {
-    -fx-background-color: red;
-} */
-
 .word {
     -fx-font-family: 'Verdana';
     -fx-text-fill: #964EC2;

@@ -15,6 +15,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableCell?>
 
 
 <VBox styleClass = "translate-main-container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" HBox.hgrow = "ALWAYS" VBox.vgrow = "ALWAYS" alignment = "CENTER" spacing = "20" 
@@ -36,7 +37,11 @@
         <padding>
             <Insets top="20" right="20" bottom="20" left="20"/>
         </padding>
-        <ComboBox styleClass = "combo-box-input" fx:id = "comboBoxInput"/>
+        <ComboBox styleClass = "combo-box-input" fx:id = "comboBoxInput">
+            <cellValueFactory>
+                <PropertyValueFactory property="English" />
+            </cellValueFactory>
+        </ComboBox>
         <VBox styleClass = "horizontal-border" HBox.hgrow = "ALWAYS"/>
         <TextArea styleClass = "input-text" fx:id = "inputText" wrapText = "true" promptText="Write something..."/>
     </VBox>
@@ -45,7 +50,11 @@
         <padding>
             <Insets top="20" right="20" bottom="20" left="20"/>
         </padding>
-        <ComboBox styleClass = "combo-box-output" fx:id = "comboBoxOutput"/>
+        <ComboBox styleClass = "combo-box-output" fx:id = "comboBoxOutput">
+            <cellValueFactory>
+                <PropertyValueFactory property="English" />
+            </cellValueFactory>
+        </ComboBox>
         <VBox styleClass = "horizontal-border" HBox.hgrow = "ALWAYS"/>
         <Label styleClass = "output-text" fx:id = "outputText" wrapText = "true"/>
     </VBox>

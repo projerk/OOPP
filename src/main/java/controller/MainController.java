@@ -27,6 +27,9 @@ public class MainController {
     private HBox thesaurus;
 
     @FXML
+    private HBox test;
+
+    @FXML
     private ScrollPane displayArea;
 
     @FXML
@@ -44,6 +47,7 @@ public class MainController {
         game.setOnMouseClicked(this::handleGameClick);
         thesaurus.setOnMouseClicked(this::handleThesaurusClick);
         translate.setOnMouseClicked(this::handleTranslateClick);
+        test.setOnMouseClicked(this::handleTestClick);
         game.setOnMouseClicked(this::handleGameClick);
 
         loadContent("DashboardView.fxml");
@@ -111,7 +115,13 @@ public class MainController {
     @FXML
     private void handleGameClick(MouseEvent event) {
         handleSidebarClick(game);
-        loadContent("GameView.fxml");
+        loadContent("ThesaurusView.fxml");
+    }
+
+    @FXML
+    private void handleTestClick(MouseEvent event) {
+        handleSidebarClick(test);
+        loadContent("TestView.fxml");
     }
 
     public static double getDisplayAreaWidth() {

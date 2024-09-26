@@ -1,96 +1,77 @@
-
-
-.information-container {
+.main-container {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 1);
     -fx-background-radius: 10;
-    -fx-background-color: #171b1d;
+    -fx-background-color: #58cc02;
 }
 
-.scroll-pane-container {
-    -fx-background-color: #0a0e0f;
+.search-textfield {
+    -fx-background-radius: 20;
+    -fx-background-color: #ffffff;
+    -fx-border-color: transparent;
+    -fx-prompt-text-fill: #bebec2;
+    -fx-font-family: "Verdana";
+    -fx-text-fill: black;
+    -fx-control-inner-background: transparent;
+    -fx-font-size: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 1);
+}
+
+.title {
+    -fx-text-fill: #ffffff;
+    -fx-font-family: "SansSerif";
+    -fx-font-size: 40px;
+    -fx-font-weight: 500;
+}
+
+.search-option {
+    -fx-background-radius: 20;
+    -fx-background-color: #ffffff;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 1);
+}
+
+.search-submit {
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 1);
+    -fx-background-color: #1cb0f6;
+    -fx-font-family: "Verdana";
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: 500;
+    -fx-font-size: 20;
+}
+
+.popular-book-container {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 1);
     -fx-background-radius: 10;
+    -fx-background-color: #fbfbfc;
 }
 
-.avatar {
-    -fx-border-radius: 100px;
-}
-
-.user-name-text {
-    -fx-font-size: 30px;
-    -fx-font-family: "Verdana";
-    -fx-text-fill: #e9e9ea;
-}
-
-.streak-text {
-    -fx-font-size: 15px;
-    -fx-font-family: "Verdana";
-    -fx-text-fill: #e9e9ea;
-}
-
-.streak-progress-text {
-    -fx-font-size: 30px;
-    -fx-font-family: "Verdana";
-    -fx-text-fill: #e9e9ea;
-}
-
-.horizontal-border {
-    -fx-pref-height: 1px;
-    -fx-background-color: #494d51;
-}
-
-.vertical-border {
-    -fx-pref-width: 1px;
-    -fx-background-color: #494d51;
-}
-
-.institution-text {
-    -fx-font-size: 15px;
+.view-more-button {
+    -fx-background-color: transparent;
     -fx-font-family: "Verdana";
     -fx-text-fill: #bebec2;
+    -fx-font-weight: 500;
+    -fx-font-size: 20;
 }
 
-.procifiency-text {
+.popular-book-title {
+    -fx-background-color: transparent;
+    -fx-font-family: "Verdana";
+    -fx-text-fill: black;
+    -fx-font-weight: 500;
+    -fx-font-size: 27;
+}
+
+.popular-book-item-title {
+    -fx-text-fill: black;
+    -fx-font-family: "SansSerif";
     -fx-font-size: 15px;
-    -fx-font-family: "Verdana";
-    -fx-text-fill: #bebec2;
+    -fx-font-weight: 500;
 }
 
-.membership-text {
-    -fx-font-size: 15px;
-    -fx-font-family: "Verdana";
-    -fx-text-fill: #bebec2;
-}
-
-.institution-text-content {
-    -fx-font-size: 24px;
-    -fx-font-family: "Verdana";
-    -fx-text-fill: #e9e9ea;
-}
-
-.procifiency-text-content {
-    -fx-font-size: 24px;
-    -fx-font-family: "Verdana";
-    -fx-text-fill: #e9e9ea;
-}
-
-.membership-text-content {
-    -fx-font-size: 24px;
-    -fx-font-family: "Verdana";
-    -fx-text-fill: #e9e9ea;
-}
-
-.item-text {
-    -fx-font-size: 15px;
-    -fx-font-family: "Verdana";
-    -fx-text-fill: #bebec2;
-}
-
-.item-text-content {
-    -fx-font-size: 30px;
-    -fx-font-family: "Verdana";
-    -fx-text-fill: #e9e9ea;
-}
-
-.vlk {
-    -fx-background-color: #171b1d;
+.popular-book-item-container:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 1);
+    -fx-border-color: gray;
     -fx-background-radius: 10px;
 }
+
+

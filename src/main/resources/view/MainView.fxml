@@ -28,48 +28,80 @@
         </padding>
         <HBox fx:id = "dashboard" styleClass = "sidebar-item" alignment = "CENTER_LEFT" spacing = "10" onMouseClicked="#handleDashboardClick">
             <padding>
-                <Insets left="10"/>
-            </padding>  
-            <ImageView fitHeight="35" fitWidth="35" preserveRatio="true">
-                <Image url="@images/profile-icon.png"/> 
-            </ImageView>
-            <Label styleClass = "sidebar-item-content" text = "Dashboard"/>
+                <Insets left="0"/>
+            </padding>
+            <VBox styleClass = "chosen-item" VBox.vgrow = "ALWAYS"/> 
+            <Label styleClass = "sidebar-item-content" text = "Overview"/>
         </HBox>
         <HBox fx:id = "dictionary" styleClass = "sidebar-item" alignment = "CENTER_LEFT" spacing = "10" onMouseClicked="#handleDictionaryClick">
             <padding>
-                <Insets left="10"/>
+                <Insets left="0"/>
             </padding> 
-            <ImageView fitHeight="35" fitWidth="35" preserveRatio="true">
-                <Image url="@images/dictionary.png"/> 
-            </ImageView>
-            <Label styleClass = "sidebar-item-content" text = "Dictionary"/>
+            <VBox styleClass = "chosen-item" VBox.vgrow = "ALWAYS"/> 
+            <Label styleClass = "sidebar-item-content" text = "Menu"/>
         </HBox>
         <HBox fx:id = "game" styleClass = "sidebar-item" alignment = "CENTER_LEFT" spacing = "10" onMouseClicked="#handleDashboardClick">
             <padding>
-                <Insets left="10"/>
+                <Insets left="0"/>
             </padding> 
-            <ImageView fitHeight="35" fitWidth="35" preserveRatio="true">
-                <Image url="@images/profile-icon.png"/> 
-            </ImageView>
-            <Label styleClass = "sidebar-item-content" text = "Game"/>
+            <VBox styleClass = "chosen-item" VBox.vgrow = "ALWAYS"/> 
+            <Label styleClass = "sidebar-item-content" text = "Cataloguing"/>
         </HBox>
         <HBox fx:id = "thesaurus" styleClass = "sidebar-item" alignment = "CENTER_LEFT" spacing = "10" onMouseClicked="#handleThesaurusClick">
             <padding>
-                <Insets left="10"/>
+                <Insets left="0"/>
             </padding> 
-            <ImageView fitHeight="35" fitWidth="35" preserveRatio="true">
-                <Image url="@images/profile-icon.png"/> 
-            </ImageView>
-            <Label styleClass = "sidebar-item-content" text = "Thesaurus"/>
+            <VBox styleClass = "chosen-item" VBox.vgrow = "ALWAYS"/> 
+            <Label styleClass = "sidebar-item-content" text = "Circulation"/>
         </HBox>
         <HBox fx:id = "translate" styleClass = "sidebar-item" alignment = "CENTER_LEFT" spacing = "10" onMouseClicked="#handleDashboardClick">
             <padding>
-                <Insets left="10"/>
+                <Insets left="0"/>
             </padding> 
-            <ImageView fitHeight="35" fitWidth="35" preserveRatio="true">
-                <Image url="@images/translate.png"/> 
-            </ImageView>
+            <VBox styleClass = "chosen-item" VBox.vgrow = "ALWAYS"/> 
             <Label styleClass = "sidebar-item-content" text = "Translate"/>
+        </HBox>
+        <HBox fx:id = "test" styleClass = "sidebar-item" alignment = "CENTER_LEFT" spacing = "10" onMouseClicked="#handleTestClick">
+            <padding>
+                <Insets left="0"/>
+            </padding> 
+            <VBox styleClass = "chosen-item" VBox.vgrow = "ALWAYS"/> 
+            <Label styleClass = "sidebar-item-content" text = "Self Circulation"/>
+        </HBox>
+        <HBox fx:id = "test" styleClass = "sidebar-item" alignment = "CENTER_LEFT" spacing = "10" onMouseClicked="#handleTestClick">
+            <padding>
+                <Insets left="0"/>
+            </padding> 
+            <VBox styleClass = "chosen-item" VBox.vgrow = "ALWAYS"/> 
+            <Label styleClass = "sidebar-item-content" text = "Serials"/>
+        </HBox>
+        <HBox fx:id = "test" styleClass = "sidebar-item" alignment = "CENTER_LEFT" spacing = "10" onMouseClicked="#handleTestClick">
+            <padding>
+                <Insets left="0"/>
+            </padding> 
+            <VBox styleClass = "chosen-item" VBox.vgrow = "ALWAYS"/> 
+            <Label styleClass = "sidebar-item-content" text = "Acquisitions"/>
+        </HBox>
+        <HBox fx:id = "test" styleClass = "sidebar-item" alignment = "CENTER_LEFT" spacing = "10" onMouseClicked="#handleTestClick">
+            <padding>
+                <Insets left="0"/>
+            </padding> 
+            <VBox styleClass = "chosen-item" VBox.vgrow = "ALWAYS"/> 
+            <Label styleClass = "sidebar-item-content" text = "ILL"/>
+        </HBox>
+        <HBox fx:id = "test" styleClass = "sidebar-item" alignment = "CENTER_LEFT" spacing = "10" onMouseClicked="#handleTestClick">
+            <padding>
+                <Insets left="0"/>
+            </padding> 
+            <VBox styleClass = "chosen-item" VBox.vgrow = "ALWAYS"/> 
+            <Label styleClass = "sidebar-item-content" text = "Management"/>
+        </HBox>
+        <HBox fx:id = "test" styleClass = "sidebar-item" alignment = "CENTER_LEFT" spacing = "10" onMouseClicked="#handleTestClick">
+            <padding>
+                <Insets left="0"/>
+            </padding> 
+            <VBox styleClass = "chosen-item" VBox.vgrow = "ALWAYS"/> 
+            <Label styleClass = "sidebar-item-content" text = "System"/>
         </HBox>
     </VBox>
     <VBox styleClass = "display-area-container" fx:id = "displayAreaContainer" VBox.vgrow = "ALWAYS" HBox.hgrow = "ALWAYS">

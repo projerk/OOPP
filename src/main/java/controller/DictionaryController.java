@@ -6,8 +6,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.HBox;
 import java.nio.file.Paths;
-
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import java.io.File;
 import org.json.JSONObject;

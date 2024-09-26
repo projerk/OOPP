@@ -1,14 +1,15 @@
 .sidebar {
-    -fx-background-color: #171b1d;
+    -fx-background-color: #fbfbfc;
     -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 1);
 }
 
 .container {
-    -fx-background-color: #0a0e0f;
+    -fx-background-color: #f5f5fa;
 }
 
 .sidebar-item-content {
-    -fx-text-fill: #e9e9ea;
+    -fx-text-fill: #797e8b;
     -fx-font-size: 15px;
     -fx-font-family: "Verdana";
 }
@@ -23,21 +24,45 @@
     -fx-min-width: 30px; 
     -fx-min-height: 30px;  
     -fx-max-width: 200px;   
-    -fx-max-height: 200px; 
+    -fx-max-height: 200px;
 }
 
 .sidebar-item:hover {
-    -fx-background-color: #148761;
+    -fx-background-color: rgb(240, 227, 227);
 }
 
-.sidebar-item.selected {
-    -fx-background-color: #148761;
-
+.sidebar-item.selected .chosen-item {
+    -fx-background-color: #6465e5;
+    /* -fx-pref-width: 10px; */
 }
 
-.dashboard {
+.sidebar-item.selected .sidebar-item-content {
+    -fx-text-fill: #6465e5;
+    /* -fx-pref-width: 10px; */
+}
+
+.chosen-item {
+    -fx-background-radius: 10px;
+    -fx-pref-width: 10px;
+}
+
+/* .dashboard {
     -fx-background: #0a0e0f;
     -fx-border-color: #0a0e0f;
+} */
+
+.scroll-pane {
+    -fx-background-color: transparent; 
+    -fx-background: transparent;
+    -fx-padding: 0; 
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;  
+    -fx-background: transparent;
+    -fx-background-insets: 0;
 }
 
 .scroll-pane:focused {
@@ -53,7 +78,3 @@
     -fx-pref-height: 0; 
 }
 
-.canvas {
-    -fx-pref-width: 500px;
-    -fx-pref-height: 500px;
-}

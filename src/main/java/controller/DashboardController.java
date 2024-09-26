@@ -12,11 +12,7 @@ public class DashboardController {
     private Projerk app = Projerk.getInstance();
 
     @FXML
-    private VBox chartContainer;
-
-    @FXML
     public void initialize() {
-        drawChart();
     }
 
     /**
@@ -24,26 +20,26 @@ public class DashboardController {
      * 
      * TO DO: add api to fetch the process of user, and draw them.
      */
-    private void drawChart() {
-        NumberAxis xAxis = new NumberAxis();
-        NumberAxis yAxis = new NumberAxis();
-        xAxis.setLabel("Timeline");
-        yAxis.setLabel("Number of Word");
+    // private void drawChart() {
+    //     NumberAxis xAxis = new NumberAxis();
+    //     NumberAxis yAxis = new NumberAxis();
+    //     xAxis.setLabel("Timeline");
+    //     yAxis.setLabel("Number of Word");
 
-        LineChart<Number, Number> lineChart = new LineChart<>(xAxis, yAxis);
-        lineChart.setTitle("Word Learned");
+    //     LineChart<Number, Number> lineChart = new LineChart<>(xAxis, yAxis);
+    //     lineChart.setTitle("Word Learned");
 
-        XYChart.Series<Number, Number> series = new XYChart.Series<>();
-        series.setName("Data Series");
+    //     XYChart.Series<Number, Number> series = new XYChart.Series<>();
+    //     series.setName("Data Series");
 
-        series.getData().add(new XYChart.Data<>(1, 23));
-        series.getData().add(new XYChart.Data<>(2, 14));
-        series.getData().add(new XYChart.Data<>(3, 15));
-        series.getData().add(new XYChart.Data<>(4, 24));
-        series.getData().add(new XYChart.Data<>(5, 34));
+    //     series.getData().add(new XYChart.Data<>(1, 23));
+    //     series.getData().add(new XYChart.Data<>(2, 14));
+    //     series.getData().add(new XYChart.Data<>(3, 15));
+    //     series.getData().add(new XYChart.Data<>(4, 24));
+    //     series.getData().add(new XYChart.Data<>(5, 34));
 
-        lineChart.getData().add(series);
+    //     lineChart.getData().add(series);
 
-        chartContainer.getChildren().add(lineChart);
-    }
+    //     chartContainer.getChildren().add(lineChart);
+    // }
 }

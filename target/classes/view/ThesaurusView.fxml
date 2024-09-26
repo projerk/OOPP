@@ -31,22 +31,24 @@
     </VBox>
 
     <VBox fx:id = "resultContainer" HBox.hgrow = "ALWAYS" spacing = "20">
-        <VBox fx:id = "synonymBox" styleClass = "thesaurus-container">
+        <VBox fx:id = "synonymBox" styleClass = "thesaurus-container" spacing = "10">
             <padding>
                 <Insets top="10" right="10" bottom="10" left="10"/>
             </padding>
             <Label styleClass = "synonym-text" text = "Synonym"/>
+            <VBox styleClass = "horizontal-border" HBox.hgrow = "ALWAYS"/>
             <FlowPane fx:id="synonymPane" hgap="10" vgap="10"> 
                 <padding>
                     <Insets top="10" right="10" bottom="10" left="10"/>
                 </padding>
             </FlowPane>
         </VBox>
-        <VBox fx:id = "antonymBox" styleClass = "thesaurus-container">
+        <VBox fx:id = "antonymBox" styleClass = "thesaurus-container" spacing = "10">
             <padding>
                 <Insets top="10" right="10" bottom="10" left="10"/>
             </padding>
             <Label styleClass = "antonym-text" text = "Antonym"/>
+            <VBox styleClass = "horizontal-border" HBox.hgrow = "ALWAYS"/>
             <FlowPane fx:id="antonymPane" hgap="10" vgap="10">
                 <padding>
                     <Insets top="10" right="10" bottom="10" left="10"/>
