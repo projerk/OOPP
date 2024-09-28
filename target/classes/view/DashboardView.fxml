@@ -22,175 +22,183 @@
 <VBox styleClass = "scroll-pane-container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" HBox.hgrow = "ALWAYS" VBox.vgrow = "ALWAYS" alignment = "CENTER" spacing = "20" 
         stylesheets="@css/DashboardView.css"
       fx:controller="controller.DashboardController">
-
-    <padding>
-        <Insets top="5" right="5" bottom="5" left="5"/>
-    </padding>
-
-    <VBox styleClass = "main-container" HBox.hgrow = "ALWAYS" VBox.vgrow = "ALWAYS">
-        <padding>
-            <Insets top="20" right="20" bottom="20" left="20"/>
-        </padding>
-
-        <VBox styleClass = "search-bar-container" HBox.hgrow = "ALWAYS" spacing = "20" alignment = "CENTER">
-            <padding>
-                <Insets top="20" right="20" bottom="20" left="20"/>
-            </padding>
-
-            <Label styleClass = "title" text = "The knowledge of humankind">
-
-            </Label>
-            <HBox styleClass = "search-textfield-container" alignment = "CENTER" spacing = "10">
-                <TextField promptText = "Write something..." styleClass = "search-textfield" alignment = "CENTER">
-            
-                </TextField>
-
-                <ComboBox styleClass = "search-option">
-                
-                </ComboBox>
-
-                <Button styleClass = "search-submit" text = "Search">
-                
-                </Button>
-            </HBox>
-        </VBox>
-    </VBox>
-    <VBox styleClass = "popular-book-container" HBox.hgrow = "ALWAYS" alignment = "CENTER">
-        <padding>
-            <Insets top="10" right="10" bottom="10" left="10"/>
-        </padding>
-        <HBox styleClass = "popular-book-title-container">
-            <Label text = "Popular" styleClass = "popular-book-title">
-
-            </Label>
-
-            <HBox styleClass = "view-more-container" HBox.hgrow = "ALWAYS" alignment = "CENTER_RIGHT">
-                <Button styleClass = "view-more-button" text = "View more">
-                
-                </Button>
-            </HBox>
-        </HBox>
-
-        <HBox fx:id="popularBookGallery" styleClass="popular-book-gallery" spacing="20">
-            <padding>
-                <Insets top="10" right="20" bottom="10" left="20"/>
-            </padding>
-            <VBox styleClass="popular-book-item-container" spacing="20" alignment="BOTTOM_CENTER" prefHeight="350">
-                <StackPane>
-                    <ImageView fitWidth="200" fitHeight="300" preserveRatio="true">
-                        <Image url="https://bookworm.vnu.edu.vn/ViewEImage.ashx?id=181210"/>
-                    </ImageView>
-                </StackPane>
-                <Label text="Test" styleClass="popular-book-item-title"/>
-            </VBox>
-
-            <VBox styleClass="popular-book-item-container" spacing="5" alignment="BOTTOM_CENTER" prefHeight="350">
-                <StackPane>
-                    <ImageView fitWidth="200" fitHeight="300" preserveRatio="true">
-                        <Image url="https://bookworm.vnu.edu.vn/ViewEImage.ashx?id=181213"/>
-                    </ImageView>
-                </StackPane>
-                <Label text="Test" styleClass="popular-book-item-title"/>
-            </VBox>
-
-            <VBox styleClass="popular-book-item-container" spacing="5" alignment="BOTTOM_CENTER" prefHeight="350">
-                <StackPane>
-                    <ImageView fitWidth="200" fitHeight="300" preserveRatio="true">
-                        <Image url="https://bookworm.vnu.edu.vn/ViewEImage.ashx?id=181209"/>
-                    </ImageView>
-                </StackPane>
-                <Label text="Test" styleClass="popular-book-item-title"/>
-            </VBox>
-
-            <VBox styleClass="popular-book-item-container" spacing="5" alignment="BOTTOM_CENTER" prefHeight="350">
-                <StackPane>
-                    <ImageView fitWidth="200" fitHeight="300" preserveRatio="true">
-                        <Image url="https://bookworm.vnu.edu.vn/ViewEImage.ashx?id=181123"/>
-                    </ImageView>
-                </StackPane>
-                <Label text="Test" styleClass="popular-book-item-title"/>
-            </VBox>
-        </HBox>
-    </VBox>
-
-    <HBox styleClass = "suggest-new-container" spacing = "20">
-        <VBox styleClass = "popular-book-container" HBox.hgrow = "ALWAYS" alignment = "CENTER">
-            <padding>
-                <Insets top="10" right="10" bottom="10" left="10"/>
-            </padding>
-            <HBox styleClass = "popular-book-title-container">
-                <Label text = "Suggested" styleClass = "popular-book-title">
-
-                </Label>
-
-                <HBox styleClass = "view-more-container" HBox.hgrow = "ALWAYS" alignment = "CENTER_RIGHT">
-                    <Button styleClass = "view-more-button" text = "View more">
-                    
-                    </Button>
-                </HBox>
-            </HBox>
-
-            <HBox fx:id="popularBookGallery" styleClass="popular-book-gallery" spacing="20">
+    <StackPane fx:id = "mainPane">
+        <ScrollPane styleClass = "scroller" fitToWidth = "true">
+            <VBox HBox.hgrow = "ALWAYS" VBox.vgrow = "ALWAYS" alignment = "CENTER" spacing = "20">
                 <padding>
-                    <Insets top="10" right="20" bottom="10" left="20"/>
+                    <Insets top="5" right="5" bottom="5" left="5"/>
                 </padding>
-                <VBox styleClass="popular-book-item-container" spacing="20" alignment="BOTTOM_CENTER" prefHeight="350">
-                    <StackPane>
-                        <ImageView fitWidth="200" fitHeight="300" preserveRatio="true">
-                            <Image url="https://bookworm.vnu.edu.vn/ViewEImage.ashx?id=181210"/>
-                        </ImageView>
-                    </StackPane>
-                    <Label text="Test" styleClass="popular-book-item-title"/>
+                <VBox styleClass = "main-container" HBox.hgrow = "ALWAYS" VBox.vgrow = "ALWAYS">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+
+                    <VBox styleClass = "search-bar-container" HBox.hgrow = "ALWAYS" spacing = "20" alignment = "CENTER">
+                        <padding>
+                            <Insets top="20" right="20" bottom="20" left="20"/>
+                        </padding>
+
+                        <Label styleClass = "title" text = "The knowledge of humankind">
+
+                        </Label>
+                        <HBox styleClass = "search-textfield-container" alignment = "CENTER" spacing = "10">
+                            <TextField promptText = "Write something..." styleClass = "search-textfield" alignment = "CENTER">
+                        
+                            </TextField>
+
+                            <ComboBox styleClass = "search-option">
+                            
+                            </ComboBox>
+
+                            <Button styleClass = "search-submit" text = "Search">
+                            
+                            </Button>
+
+                            <Button fx:id = "test" text = "Test" onAction = "#testButton">
+                            
+                            </Button>
+                        </HBox>
+                    </VBox>
+                </VBox>
+                <VBox styleClass = "popular-book-container" HBox.hgrow = "ALWAYS" alignment = "CENTER">
+                    <padding>
+                        <Insets top="10" right="10" bottom="10" left="10"/>
+                    </padding>
+                    <HBox styleClass = "popular-book-title-container">
+                        <Label text = "Popular" styleClass = "popular-book-title">
+
+                        </Label>
+
+                        <HBox styleClass = "view-more-container" HBox.hgrow = "ALWAYS" alignment = "CENTER_RIGHT">
+                            <Button styleClass = "view-more-button" text = "View more">
+                            
+                            </Button>
+                        </HBox>
+                    </HBox>
+
+                    <HBox fx:id="popularBookGallery" styleClass="popular-book-gallery" spacing="20">
+                        <padding>
+                            <Insets top="10" right="20" bottom="10" left="20"/>
+                        </padding>
+                        <VBox styleClass="popular-book-item-container" spacing="20" alignment="BOTTOM_CENTER" prefHeight="350">
+                            <StackPane>
+                                <ImageView fitWidth="200" fitHeight="300" preserveRatio="true">
+                                    <Image url="https://bookworm.vnu.edu.vn/ViewEImage.ashx?id=181210"/>
+                                </ImageView>
+                            </StackPane>
+                            <Label text="Test" styleClass="popular-book-item-title"/>
+                        </VBox>
+
+                        <VBox styleClass="popular-book-item-container" spacing="5" alignment="BOTTOM_CENTER" prefHeight="350">
+                            <StackPane>
+                                <ImageView fitWidth="200" fitHeight="300" preserveRatio="true">
+                                    <Image url="https://bookworm.vnu.edu.vn/ViewEImage.ashx?id=181213"/>
+                                </ImageView>
+                            </StackPane>
+                            <Label text="Test" styleClass="popular-book-item-title"/>
+                        </VBox>
+
+                        <VBox styleClass="popular-book-item-container" spacing="5" alignment="BOTTOM_CENTER" prefHeight="350">
+                            <StackPane>
+                                <ImageView fitWidth="200" fitHeight="300" preserveRatio="true">
+                                    <Image url="https://bookworm.vnu.edu.vn/ViewEImage.ashx?id=181209"/>
+                                </ImageView>
+                            </StackPane>
+                            <Label text="Test" styleClass="popular-book-item-title"/>
+                        </VBox>
+
+                        <VBox styleClass="popular-book-item-container" spacing="5" alignment="BOTTOM_CENTER" prefHeight="350">
+                            <StackPane>
+                                <ImageView fitWidth="200" fitHeight="300" preserveRatio="true">
+                                    <Image url="https://bookworm.vnu.edu.vn/ViewEImage.ashx?id=181123"/>
+                                </ImageView>
+                            </StackPane>
+                            <Label text="Test" styleClass="popular-book-item-title"/>
+                        </VBox>
+                    </HBox>
                 </VBox>
 
-                <VBox styleClass="popular-book-item-container" spacing="5" alignment="BOTTOM_CENTER" prefHeight="350">
-                    <StackPane>
-                        <ImageView fitWidth="200" fitHeight="300" preserveRatio="true">
-                            <Image url="https://bookworm.vnu.edu.vn/ViewEImage.ashx?id=181213"/>
-                        </ImageView>
-                    </StackPane>
-                    <Label text="Test" styleClass="popular-book-item-title"/>
-                </VBox>
-            </HBox>
-        </VBox>
-        <VBox styleClass = "popular-book-container" HBox.hgrow = "ALWAYS" alignment = "CENTER">
-            <padding>
-                <Insets top="10" right="10" bottom="10" left="10"/>
-            </padding>
-            <HBox styleClass = "popular-book-title-container">
-                <Label text = "New" styleClass = "popular-book-title">
+                <HBox styleClass = "suggest-new-container" spacing = "20">
+                    <VBox styleClass = "popular-book-container" HBox.hgrow = "ALWAYS" alignment = "CENTER">
+                        <padding>
+                            <Insets top="10" right="10" bottom="10" left="10"/>
+                        </padding>
+                        <HBox styleClass = "popular-book-title-container">
+                            <Label text = "Suggested" styleClass = "popular-book-title">
 
-                </Label>
+                            </Label>
 
-                <HBox styleClass = "view-more-container" HBox.hgrow = "ALWAYS" alignment = "CENTER_RIGHT">
-                    <Button styleClass = "view-more-button" text = "View more">
-                    
-                    </Button>
+                            <HBox styleClass = "view-more-container" HBox.hgrow = "ALWAYS" alignment = "CENTER_RIGHT">
+                                <Button styleClass = "view-more-button" text = "View more">
+                                
+                                </Button>
+                            </HBox>
+                        </HBox>
+
+                        <HBox fx:id="popularBookGallery" styleClass="popular-book-gallery" spacing="20">
+                            <padding>
+                                <Insets top="10" right="20" bottom="10" left="20"/>
+                            </padding>
+                            <VBox styleClass="popular-book-item-container" spacing="20" alignment="BOTTOM_CENTER" prefHeight="350">
+                                <StackPane>
+                                    <ImageView fitWidth="200" fitHeight="300" preserveRatio="true">
+                                        <Image url="https://bookworm.vnu.edu.vn/ViewEImage.ashx?id=181210"/>
+                                    </ImageView>
+                                </StackPane>
+                                <Label text="Test" styleClass="popular-book-item-title"/>
+                            </VBox>
+
+                            <VBox styleClass="popular-book-item-container" spacing="5" alignment="BOTTOM_CENTER" prefHeight="350">
+                                <StackPane>
+                                    <ImageView fitWidth="200" fitHeight="300" preserveRatio="true">
+                                        <Image url="https://bookworm.vnu.edu.vn/ViewEImage.ashx?id=181213"/>
+                                    </ImageView>
+                                </StackPane>
+                                <Label text="Test" styleClass="popular-book-item-title"/>
+                            </VBox>
+                        </HBox>
+                    </VBox>
+                    <VBox styleClass = "popular-book-container" HBox.hgrow = "ALWAYS" alignment = "CENTER">
+                        <padding>
+                            <Insets top="10" right="10" bottom="10" left="10"/>
+                        </padding>
+                        <HBox styleClass = "popular-book-title-container">
+                            <Label text = "New" styleClass = "popular-book-title">
+
+                            </Label>
+
+                            <HBox styleClass = "view-more-container" HBox.hgrow = "ALWAYS" alignment = "CENTER_RIGHT">
+                                <Button styleClass = "view-more-button" text = "View more">
+                                
+                                </Button>
+                            </HBox>
+                        </HBox>
+
+                        <HBox fx:id="popularBookGallery" styleClass="popular-book-gallery" spacing="20">
+                            <padding>
+                                <Insets top="10" right="20" bottom="10" left="20"/>
+                            </padding>
+                            <VBox styleClass="popular-book-item-container" spacing="5" alignment="BOTTOM_CENTER" prefHeight="350">
+                                <StackPane>
+                                    <ImageView fitWidth="200" fitHeight="300" preserveRatio="true">
+                                        <Image url="https://bookworm.vnu.edu.vn/ViewEImage.ashx?id=181209"/>
+                                    </ImageView>
+                                </StackPane>
+                                <Label text="Test" styleClass="popular-book-item-title"/>
+                            </VBox>
+
+                            <VBox styleClass="popular-book-item-container" spacing="5" alignment="BOTTOM_CENTER" prefHeight="350">
+                                <StackPane>
+                                    <ImageView fitWidth="200" fitHeight="300" preserveRatio="true">
+                                        <Image url="https://bookworm.vnu.edu.vn/ViewEImage.ashx?id=181123"/>
+                                    </ImageView>
+                                </StackPane>
+                                <Label text="Test" styleClass="popular-book-item-title"/>
+                            </VBox>
+                        </HBox>
+                    </VBox>
                 </HBox>
-            </HBox>
-
-            <HBox fx:id="popularBookGallery" styleClass="popular-book-gallery" spacing="20">
-                <padding>
-                    <Insets top="10" right="20" bottom="10" left="20"/>
-                </padding>
-                <VBox styleClass="popular-book-item-container" spacing="5" alignment="BOTTOM_CENTER" prefHeight="350">
-                    <StackPane>
-                        <ImageView fitWidth="200" fitHeight="300" preserveRatio="true">
-                            <Image url="https://bookworm.vnu.edu.vn/ViewEImage.ashx?id=181209"/>
-                        </ImageView>
-                    </StackPane>
-                    <Label text="Test" styleClass="popular-book-item-title"/>
-                </VBox>
-
-                <VBox styleClass="popular-book-item-container" spacing="5" alignment="BOTTOM_CENTER" prefHeight="350">
-                    <StackPane>
-                        <ImageView fitWidth="200" fitHeight="300" preserveRatio="true">
-                            <Image url="https://bookworm.vnu.edu.vn/ViewEImage.ashx?id=181123"/>
-                        </ImageView>
-                    </StackPane>
-                    <Label text="Test" styleClass="popular-book-item-title"/>
-                </VBox>
-            </HBox>
-        </VBox>
-    </HBox>
+            </VBox>
+        </ScrollPane>
+    </StackPane>
 </VBox>

@@ -30,7 +30,7 @@ public class MainController {
     private HBox test;
 
     @FXML
-    private ScrollPane displayArea;
+    private VBox displayArea;
 
     @FXML
     private VBox displayAreaContainer;
@@ -66,7 +66,7 @@ public class MainController {
             String fxmlPath = Paths.get("src", "main", "resources", "view", fxmlFile).toAbsolutePath().toString();
             FXMLLoader loader = new FXMLLoader(Paths.get(fxmlPath).toUri().toURL());            
             VBox newContent = loader.load();
-            displayArea.setContent(newContent);
+            displayArea.getChildren().setAll(newContent);
         } catch (IOException e) {
             e.printStackTrace();
         }

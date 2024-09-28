@@ -105,8 +105,8 @@
         </HBox>
     </VBox>
     <VBox styleClass = "display-area-container" fx:id = "displayAreaContainer" VBox.vgrow = "ALWAYS" HBox.hgrow = "ALWAYS">
-        <ScrollPane fx:id = "displayArea" styleClass = "dashboard" HBox.hgrow = "ALWAYS" fitToWidth="true">
+        <VBox fx:id = "displayArea" styleClass = "dashboard" HBox.hgrow = "ALWAYS">
         <!-- View add here -->
-        </ScrollPane>
+        </VBox>
     </VBox>
 </HBox>
