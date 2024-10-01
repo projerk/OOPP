@@ -13,7 +13,7 @@
     -fx-text-fill: black;
     -fx-control-inner-background: transparent;
     -fx-font-size: 20;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 1);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 100, 0, 0, 1);
 }
 
 .title {
@@ -70,8 +70,10 @@
 
 .popular-book-item-container:hover {
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 1);
-    -fx-border-color: gray;
-    -fx-background-radius: 10px;
+    -fx-border-color: #6465e5;
+    -fx-border: 3px;
+    -fx-background-radius: 10;
+    -fx-border-radius:10;
 }
 
 .scroll-pane {
